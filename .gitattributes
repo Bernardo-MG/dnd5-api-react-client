@@ -1,0 +1,15 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Known text files
+*.css           text diff=css
+*.js            text
+*.json          text
+*.htm           text diff=html
+*.html          text diff=html
+*.properties    text
+*.sh            text
+*.md            text
+*.txt           text
+*.xml           text
+*.yml           text
