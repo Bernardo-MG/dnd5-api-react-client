@@ -18,10 +18,10 @@
       "url": "https://github.com/Bernardo-MG/react-rest-client-example/issues"
    },
    "scripts": {
-      "development": "./node_modules/.bin/cross-env INPUT_PATH=./src/ MODULE_PATH=./node_modules/ OUTPUT_PATH=./build/ ./node_modules/.bin/webpack --config webpack.dev.js",
-      "build": "./node_modules/.bin/webpack --config webpack.prod.js",
-      "size": "./node_modules/.bin/webpack --config webpack.size.js",
-      "test": "./node_modules/.bin/jest"
+      "development": "cross-env INPUT_PATH=./src/ MODULE_PATH=./node_modules/ OUTPUT_PATH=./build/ webpack --config webpack.dev.js",
+      "build": "cross-env INPUT_PATH=./src/ MODULE_PATH=./node_modules/ OUTPUT_PATH=./build/ webpack webpack --config webpack.prod.js",
+      "size": "webpack --config webpack.size.js",
+      "test": "jest"
    },
    "jest": {
       "verbose": true,
