@@ -30,6 +30,9 @@ Desktop.ini
 .Spotlight-V100
 .Trashes
 
-# Node
+# Node #
 /node_modules/
 package-lock.json
+
+# Build #
+build/**
