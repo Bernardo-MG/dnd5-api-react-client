@@ -1,5 +1,6 @@
 var path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Environment profile
 const env = process.env.NODE_ENV || 'development';
@@ -35,7 +36,12 @@ let plugins = [
    new webpack.DefinePlugin({
       APP_VERSION : JSON.stringify(PROJECT_VERSION),
       REPO_URL : JSON.stringify(PROJECT_REPO_URL)
-   })
+   }),
+   new CopyWebpackPlugin([
+      {
+         from: 'index'
+      }
+  ])
 ]
 
 module.exports = {
