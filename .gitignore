@@ -1,6 +1,10 @@
 # Git folder #
 /.git/
 
+# Log files #
+/*.log
+/*.log.*
+
 # Eclipse files #
 .buildpath
 .classpath
