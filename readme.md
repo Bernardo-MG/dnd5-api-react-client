@@ -19,12 +19,24 @@ First of all the dependencies should be installed:
 $ npm install
 ```
 
-### Running locally
-
-The following script will take care of deploying the project locally.
+Then there are two options. Building a development version:
 
 ```
 $ npm run development
+```
+
+Or building a release:
+
+```
+$ npm run build
+```
+
+## Deploying locally
+
+Once the project has been built it can be deployed locally for testing:
+
+```
+$ npm run start
 ```
 
 ## Collaborate
