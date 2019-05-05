@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import '@babel/polyfill';
+
 import Root from 'root/containers/Root';
 import { createHistory } from 'history';
 import { syncHistoryWithStore } from 'react-router-redux';

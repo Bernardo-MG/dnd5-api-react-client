@@ -27,12 +27,6 @@ const MODULE_PATH = process.env.MODULE_PATH;
 // Plugins
 let plugins = [
    new webpack.optimize.OccurrenceOrderPlugin(),
-   new webpack.optimize.CommonsChunkPlugin({
-      name : 'vendor',
-      filename : OUTPUT_FILE_VENDOR,
-      minChunks : 2
-   }),
-   new webpack.NoEmitOnErrorsPlugin(),
    new webpack.DefinePlugin({
       APP_VERSION : JSON.stringify(PROJECT_VERSION),
       REPO_URL : JSON.stringify(PROJECT_REPO_URL)
@@ -65,18 +59,10 @@ module.exports = {
    },
    module : {
       rules : [
-       		{
-               test : /(\.js)$/,
-               enforce: 'pre',
-               exclude: /node_modules/,
-               loader: 'eslint-loader'
-            },
             {
                test : /(\.js)$/,
                exclude: /node_modules/,
-               use: {
-                  loader : 'babel-loader'
-               }
+               use: ['babel-loader', 'eslint-loader']
             },
             {
                test : /\.(css|scss)$/,

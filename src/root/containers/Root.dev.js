@@ -16,16 +16,17 @@ const locale = Cookie.get('locale') || 'en';
  * 
  * It will include the dev tools.
  */
-const Root = ({ store, history }) => (
-   <IntlProvider locale={locale}>
-      <Provider store={store}>
-         <div>
-            <Router history={history} routes={routes} />
-            <DevTools />
-         </div>
-      </Provider>
-   </IntlProvider>
-);
+const Root = ({ store, history }) =>
+   (
+      <IntlProvider locale={locale}>
+         <Provider store={store}>
+            <div>
+               <Router history={history} routes={routes} />
+               <DevTools />
+            </div>
+         </Provider>
+      </IntlProvider>
+   );
 
 Root.propTypes = {
    /** Application store */
