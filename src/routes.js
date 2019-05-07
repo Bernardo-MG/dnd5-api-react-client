@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route } from 'react-router-dom';
 
 import BaseLayout from 'layout/containers/BaseLayout';
 import Index from 'layout/containers/Index';
@@ -13,5 +13,5 @@ import Index from 'layout/containers/Index';
  * - Component to show
  */
 export default <Route path='/' component={BaseLayout}>
-   <IndexRoute component={Index}/>
+   <Route path='/' exact component={Index}/>
 </Route>;
