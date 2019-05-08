@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import BaseLayout from 'layout/containers/BaseLayout';
 import Index from 'layout/containers/Index';
@@ -12,6 +12,6 @@ import Index from 'layout/containers/Index';
  * - Class name to mark links as active
  * - Component to show
  */
-export default <Route path='/' component={BaseLayout}>
+export default <Switch component={BaseLayout}>
    <Route path='/' exact component={Index}/>
-</Route>;
+</Switch>;
