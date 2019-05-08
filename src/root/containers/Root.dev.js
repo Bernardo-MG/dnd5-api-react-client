@@ -20,10 +20,12 @@ const Root = ({ store, history }) =>
    (
       <IntlProvider locale={locale}>
          <Provider store={store}>
-            <div>
-               <Router history={history} routes={routes} />
+            <React.Fragment>
+               <Router history={history}>
+                  {routes}
+               </Router>
                <DevTools />
-            </div>
+            </React.Fragment>
          </Provider>
       </IntlProvider>
    );
