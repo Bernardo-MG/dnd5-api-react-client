@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
 
-const About = ({ intl }) =>
+const SearchView = ({ intl }) =>
    <BaseLayout>
       <Grid container justify='center'>
          <Typography variant='h4' gutterBottom>
@@ -24,8 +24,8 @@ const About = ({ intl }) =>
       </Grid>
    </BaseLayout>;
 
-About.propTypes = {
+SearchView.propTypes = {
    intl: intlShape.isRequired
 };
 
-export default injectIntl(About);
+export default injectIntl(SearchView);
