@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { injectIntl, intlShape } from 'react-intl';
+
 import { connect } from 'react-redux';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -13,17 +15,17 @@ import Typography from '@material-ui/core/Typography';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-const BaseLayout = (props) =>
+const BaseLayout = ({ intl, children }) =>
    <React.Fragment>
       <AppBar position="relative">
          <Toolbar>
             <Typography variant="h6" color="inherit" noWrap>
-               Title
+               { intl.formatMessage({ id: 'app.title' }) }
             </Typography>
          </Toolbar>
       </AppBar>
       <main>
-         {props.children}
+         {children}
       </main>
    </React.Fragment>;
 
@@ -32,7 +34,8 @@ BaseLayout.propTypes = {
    children: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.object
-   ])
+   ]),
+   intl: intlShape.isRequired
 };
 
 const mapStateToProps = () => {
@@ -43,7 +46,7 @@ const mapDispatchToProps = () => {
    return {};
 };
 
-export default connect(
+export default injectIntl(connect(
    mapStateToProps,
    mapDispatchToProps
-)(BaseLayout);
+)(BaseLayout));
