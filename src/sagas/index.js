@@ -1,5 +1,4 @@
-import { entitySagas } from 'example/sagas';
-import { all } from 'redux-saga/effects';
+// import { all } from 'redux-saga/effects';
 
 /**
  * Application redux sagas.
@@ -8,6 +7,6 @@ import { all } from 'redux-saga/effects';
  */
 export default function* rootSaga() {
    yield [
-      all([...entitySagas])
+      // all([...entitySagas])
    ];
 }

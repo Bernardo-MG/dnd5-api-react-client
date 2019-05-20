@@ -1,20 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import Root from 'root/containers/Root';
-import { createHistory } from 'history';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { useRouterHistory } from 'react-router';
-import configureStore from 'store/configureStore';
+import '@babel/polyfill';
 
-import 'theme/style.scss';
+import Root from 'root/containers/Root';
+import { createBrowserHistory } from 'history';
+import configureStore from 'store/configureStore';
 
 // Data store
 const store = configureStore();
 
 // History for the routes
-const browserHistory = useRouterHistory(createHistory)();
-const history = syncHistoryWithStore(browserHistory, store);
+const history = createBrowserHistory();
 
 // Root element, where the application will be loaded
 const rootElement = document.getElementById('root');

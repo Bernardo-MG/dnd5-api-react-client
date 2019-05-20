@@ -4,19 +4,26 @@ import PropTypes from 'prop-types';
 
 import { injectIntl } from 'react-intl';
 
-import Box from 'grommet/components/Box';
-import Paragraph from 'grommet/components/Paragraph';
+import BaseLayout from 'layout/containers/BaseLayout';
 
-import SimpleView from 'views/containers/SimpleView';
+import SearchForm from 'forms/components/SearchForm';
 
-import titleMessages from 'i18n/title';
+import Grid from '@material-ui/core/Grid';
 
-const About = (props) =>
-   <SimpleView title={props.intl.formatMessage(titleMessages.title)}>
-      <Box justify='center' align='center' margin='medium'>
-         <Paragraph>Index.</Paragraph>
-      </Box>
-   </SimpleView>;
+import Typography from '@material-ui/core/Typography';
+
+const About = () =>
+   <BaseLayout>
+      <Grid container justify='center'>
+         <Typography variant='h4' gutterBottom>
+            Material-UI
+         </Typography>
+         <SearchForm
+            id='standard-name'
+            label='Name'
+         />
+      </Grid>
+   </BaseLayout>;
 
 About.propTypes = {
    intl: PropTypes.object.isRequired

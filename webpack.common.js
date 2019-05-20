@@ -15,11 +15,7 @@ const PROJECT_REPO_URL = process.env.REPO_URL;
 const INPUT_PATH = process.env.INPUT_PATH;
 const INPUT_PATH_ENTRY = INPUT_PATH + 'index.js';
 
-// Output directory
-const OUTPUT_FILE_VENDOR = 'vendor.bundle.js';
-
 const OUTPUT_PATH = process.env.OUTPUT_PATH;
-const OUTPUT_PATH_BUNDLE = OUTPUT_PATH + 'bundle.js';
 
 // Modules dependencies directory
 const MODULE_PATH = process.env.MODULE_PATH;
@@ -27,12 +23,6 @@ const MODULE_PATH = process.env.MODULE_PATH;
 // Plugins
 let plugins = [
    new webpack.optimize.OccurrenceOrderPlugin(),
-   new webpack.optimize.CommonsChunkPlugin({
-      name : 'vendor',
-      filename : OUTPUT_FILE_VENDOR,
-      minChunks : 2
-   }),
-   new webpack.NoEmitOnErrorsPlugin(),
    new webpack.DefinePlugin({
       APP_VERSION : JSON.stringify(PROJECT_VERSION),
       REPO_URL : JSON.stringify(PROJECT_REPO_URL)
@@ -50,9 +40,28 @@ module.exports = {
       app: INPUT_PATH_ENTRY,
    },
    cache : true,
-   output : {
-      path : path.resolve(__dirname, OUTPUT_PATH),
-      filename : 'bundle.js'
+   optimization: {
+      splitChunks: {
+         cacheGroups: {
+            commons: {
+               chunks: "initial",
+               minChunks: 2,
+               maxInitialRequests: 5, // The default limit is too small to showcase the effect
+               minSize: 0 // This is example is too small to create commons chunks
+            },
+            vendor: {
+               test: /node_modules/,
+               chunks: "initial",
+               name: "vendor",
+               priority: 10,
+               enforce: true
+            }
+         }
+      }
+   },
+   output: {
+      path: path.join(__dirname, OUTPUT_PATH),
+      filename: "[name].js"
    },
    resolve : {
       extensions : [ '.scss', '.css', '.js', '.json' ],
@@ -65,18 +74,10 @@ module.exports = {
    },
    module : {
       rules : [
-       		{
-               test : /(\.js)$/,
-               enforce: 'pre',
-               exclude: /node_modules/,
-               loader: 'eslint-loader'
-            },
             {
                test : /(\.js)$/,
                exclude: /node_modules/,
-               use: {
-                  loader : 'babel-loader'
-               }
+               use: ['babel-loader', 'eslint-loader']
             },
             {
                test : /\.(css|scss)$/,

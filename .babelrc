@@ -3,12 +3,15 @@
       [ "env", {
          "targets": { node: "6" },
       } ],
-      "stage-0",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
+   ],
+   "plugins": [
+      ["@babel/plugin-proposal-class-properties", { "loose": true }]
    ],
    "env": {
       "test": {
-         "presets": ["es2015", "stage-1", "react", "flow"]
+         "presets": ["@babel/preset-env", "@babel/preset-react", "es2015", "stage-1", "react", "flow"]
       }
    }
 }

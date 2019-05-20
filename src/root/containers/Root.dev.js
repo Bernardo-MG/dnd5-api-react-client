@@ -16,16 +16,19 @@ const locale = Cookie.get('locale') || 'en';
  * 
  * It will include the dev tools.
  */
-const Root = ({ store, history }) => (
-   <IntlProvider locale={locale}>
-      <Provider store={store}>
-         <div>
-            <Router history={history} routes={routes} />
-            <DevTools />
-         </div>
-      </Provider>
-   </IntlProvider>
-);
+const Root = ({ store, history }) =>
+   (
+      <IntlProvider locale={locale}>
+         <Provider store={store}>
+            <React.Fragment>
+               <Router history={history}>
+                  {routes}
+               </Router>
+               <DevTools />
+            </React.Fragment>
+         </Provider>
+      </IntlProvider>
+   );
 
 Root.propTypes = {
    /** Application store */
