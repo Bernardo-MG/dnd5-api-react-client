@@ -4,7 +4,7 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import BaseLayout from 'layout/containers/BaseLayout';
 
-import SearchForm from 'forms/components/SearchForm';
+import SearchForm from 'search/components/SearchForm';
 
 import Grid from '@material-ui/core/Grid';
 
