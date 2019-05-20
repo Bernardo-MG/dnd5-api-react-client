@@ -8,14 +8,9 @@ import SearchForm from 'search/components/SearchForm';
 
 import Grid from '@material-ui/core/Grid';
 
-import Typography from '@material-ui/core/Typography';
-
 const SearchView = ({ intl }) =>
    <BaseLayout>
       <Grid container justify='center'>
-         <Typography variant='h4' gutterBottom>
-            Material-UI
-         </Typography>
          <SearchForm
             id='title'
             label={ intl.formatMessage({ id: 'form.title' }) }

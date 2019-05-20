@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import Button from '@material-ui/core/Button';
 
-import Grid from '@material-ui/core/Grid';
-
 import TextField from '@material-ui/core/TextField';
 
 class SearchForm extends Component {
@@ -18,7 +16,7 @@ class SearchForm extends Component {
 
    render() {
       return (
-         <Grid container>
+         <React.Fragment>
             <TextField
                id={this.props.id}
                label={this.props.label}
@@ -28,7 +26,7 @@ class SearchForm extends Component {
             <Button variant="contained">
                {this.props.buttonLabel}
             </Button>
-         </Grid>
+         </React.Fragment>
       );
    }
 
