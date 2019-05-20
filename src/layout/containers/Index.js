@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
-import { injectIntl } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 
 import BaseLayout from 'layout/containers/BaseLayout';
 
@@ -12,21 +10,22 @@ import Grid from '@material-ui/core/Grid';
 
 import Typography from '@material-ui/core/Typography';
 
-const About = () =>
+const About = ({ intl }) =>
    <BaseLayout>
       <Grid container justify='center'>
          <Typography variant='h4' gutterBottom>
             Material-UI
          </Typography>
          <SearchForm
-            id='standard-name'
-            label='Name'
+            id='title'
+            label={ intl.formatMessage({ id: 'form.title' }) }
+            buttonLabel={ intl.formatMessage({ id: 'form.search' }) }
          />
       </Grid>
    </BaseLayout>;
 
 About.propTypes = {
-   intl: PropTypes.object.isRequired
+   intl: intlShape.isRequired
 };
 
 export default injectIntl(About);

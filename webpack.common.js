@@ -66,7 +66,7 @@ module.exports = {
    resolve : {
       extensions : [ '.scss', '.css', '.js', '.json' ],
       modules : [
-         'src/main/js',
+         'src',
          path.resolve(__dirname, INPUT_PATH),
          'node_modules',
          path.resolve(__dirname, MODULE_PATH)

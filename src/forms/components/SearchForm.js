@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
+import Button from '@material-ui/core/Button';
+
 import Grid from '@material-ui/core/Grid';
 
 import TextField from '@material-ui/core/TextField';
@@ -23,6 +25,9 @@ class SearchForm extends Component {
                value={this.state.query}
                onChange={this.handleChange}
             />
+            <Button variant="contained">
+               {this.props.buttonLabel}
+            </Button>
          </Grid>
       );
    }
@@ -30,8 +35,10 @@ class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
+   intl: PropTypes.object.isRequired,
    id: PropTypes.string.isRequired,
-   label: PropTypes.string.isRequired
+   label: PropTypes.string.isRequired,
+   buttonLabel: PropTypes.string.isRequired
 };
 
 export default SearchForm;
