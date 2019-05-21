@@ -19,10 +19,6 @@ class SearchForm extends Component {
       this.setState({ query: event.target.value });
    };
 
-   _onHandleClick = (event) => {
-      this.setState({ query: event.target.value });
-   };
-
    render() {
       return (
          <React.Fragment>
