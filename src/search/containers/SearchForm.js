@@ -23,7 +23,7 @@ class SearchForm extends Component {
                value={this.state.query}
                onChange={this.handleChange}
             />
-            <Button variant="contained">
+            <Button variant="contained" onClick={this.props.onClick}>
                {this.props.buttonLabel}
             </Button>
          </React.Fragment>
@@ -33,10 +33,10 @@ class SearchForm extends Component {
 }
 
 SearchForm.propTypes = {
-   intl: PropTypes.object.isRequired,
    id: PropTypes.string.isRequired,
    label: PropTypes.string.isRequired,
-   buttonLabel: PropTypes.string.isRequired
+   buttonLabel: PropTypes.string.isRequired,
+   onClick: PropTypes.func.isRequired
 };
 
 export default SearchForm;
