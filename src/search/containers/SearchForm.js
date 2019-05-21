@@ -10,7 +10,16 @@ class SearchForm extends Component {
 
    state = { query: '' };
 
-   handleChange = (event) => {
+   /**
+    * Handles the value change event.
+    *
+    * @param event value change event
+    */
+   _onHandleChange = (event) => {
+      this.setState({ query: event.target.value });
+   };
+
+   _onHandleClick = (event) => {
       this.setState({ query: event.target.value });
    };
 
@@ -21,9 +30,10 @@ class SearchForm extends Component {
                id={this.props.id}
                label={this.props.label}
                value={this.state.query}
-               onChange={this.handleChange}
+               onChange={::this._onHandleChange}
             />
-            <Button variant="contained" onClick={this.props.onClick}>
+            <Button variant="contained" onClick={() =>
+               ::this.props.onClick(this.state.query)}>
                {this.props.buttonLabel}
             </Button>
          </React.Fragment>
