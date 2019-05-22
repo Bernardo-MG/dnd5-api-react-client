@@ -1,5 +1,5 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import * as types from 'search/actions/actionTypes';
+import * as types from 'search/actions/types';
 import { success, failure } from 'search/actions';
 
 function fetch(params) {

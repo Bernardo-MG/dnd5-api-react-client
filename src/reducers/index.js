@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
+import comic from 'reducers/comics';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({ comic });
 
 export default rootReducer;

@@ -1,4 +1,4 @@
-import { SEARCH_COMIC, SEARCH_COMIC_SUCCESS, SEARCH_COMIC_FAILURE } from 'search/actions/actionTypes';
+import { SEARCH_COMIC, SEARCH_COMIC_SUCCESS, SEARCH_COMIC_FAILURE } from 'search/actions/types';
 
 export const searchComic = (value) => {
    return {
