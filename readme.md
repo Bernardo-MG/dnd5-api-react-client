@@ -31,6 +31,14 @@ Or building a release:
 $ npm run build
 ```
 
+### Running tests
+
+There is a script ready for running tests:
+
+```
+npm run test
+```
+
 ## Deploying locally
 
 Once the project has been built it can be deployed locally for testing:

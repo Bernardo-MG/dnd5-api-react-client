@@ -37,7 +37,7 @@
       ],
       "moduleDirectories": [
          "node_modules",
-         "src/main/js"
+         "src"
       ]
    },
    "dependencies": {
