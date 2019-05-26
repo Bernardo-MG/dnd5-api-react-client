@@ -78,24 +78,6 @@ module.exports = {
                test : /(\.js)$/,
                exclude: /node_modules/,
                use: ['babel-loader', 'eslint-loader']
-            },
-            {
-               test : /\.(css|scss)$/,
-               exclude: /node_modules/,
-               use: [
-                  {
-                     loader: 'file-loader',
-                     options: {
-                        name: '[name].css'
-                     }
-                  },
-                  {
-                     loader: 'sass-loader',
-                     options: {
-                        includePaths : [ path.resolve(__dirname, MODULE_PATH) ]
-                     }
-                  }
-               ]
             } ]
    },
    plugins
