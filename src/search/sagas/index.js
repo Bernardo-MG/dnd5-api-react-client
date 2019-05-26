@@ -1,12 +1,12 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import * as types from 'search/actions/types';
+import { SEARCH_COMIC } from 'search/actions/types';
 import { success, failure } from 'search/actions';
 
 function fetch(params) {
    return params;
 }
 
-export function* search(action) {
+function* search(action) {
    if (action.payload) {
       let response;
       try {
@@ -21,5 +21,5 @@ export function* search(action) {
 }
 
 export const searchSagas = [
-   takeLatest(types.SEARCH_COMIC, search)
+   takeLatest(SEARCH_COMIC, search)
 ];
