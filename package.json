@@ -41,14 +41,14 @@
       ]
    },
    "dependencies": {
-      "@babel/polyfill": "~7.4.3",
+      "@babel/polyfill": "~7.4.4",
       "history": "~4.9.0",
       "lodash": "~4.17.4",
       "@material-ui/core": "~3.9.3",
       "normalizr": "~3.2.4",
       "react": "~16.8.6",
       "react-dom": "~16.8.6",
-      "react-intl": "~2.4.0",
+      "react-intl": "~2.9.0",
       "react-router": "~5.0.0",
       "react-router-dom": "~5.0.0",
       "react-redux": "~5.0.6",
@@ -58,15 +58,14 @@
       "superagent": "~3.8.3"
    },
    "devDependencies": {
-      "file-loader": "~1.1.11",
-      "@babel/core": "~7.4.4",
+      "@babel/core": "~7.4.5",
       "babel-eslint": "~10.0.1",
-      "babel-jest": "~24.7.1",
+      "babel-jest": "~24.8.0",
       "babel-loader": "~8.0.5",
       "@babel/plugin-proposal-class-properties": "~7.4.4",
       "@babel/plugin-proposal-function-bind": "~7.2.0",
       "babel-preset-env": "~1.7.0",
-      "@babel/preset-env": "~7.4.4",
+      "@babel/preset-env": "~7.4.5",
       "@babel/preset-react": "~7.0.0",
       "copy-webpack-plugin": "~5.0.3",
       "cross-env": "~5.2.0",
@@ -79,7 +78,7 @@
       "eslint-plugin-jsx-a11y": "~6.2.1",
       "eslint-plugin-react": "~7.13.0",
       "http-server": "~0.9.0",
-      "jest": "~23.6.0",
+      "jest": "~24.8.0",
       "optimize-css-assets-webpack-plugin": "~5.0.1",
       "prop-types": "~15.6.0",
       "redux-devtools": "~3.5.0",
@@ -87,10 +86,10 @@
       "redux-devtools-log-monitor": "~1.4.0",
       "redux-logger": "~3.0.6",
       "uglifyjs-webpack-plugin": "~2.1.2",
-      "webpack": "~4.30.0",
+      "webpack": "~4.32.2",
       "webpack-bundle-analyzer": "~3.3.2",
       "webpack-cli": "~3.3.2",
-      "webpack-dev-middleware": "~3.6.2",
+      "webpack-dev-middleware": "~3.7.0",
       "webpack-merge": "~4.2.1"
    }
 }
