@@ -14,10 +14,10 @@ const affinities = (state = { comics: [] }, action) => {
          ...state,
          comics: []
       };
-   case types.SET_COMICS:
+   case types.ADD_COMICS:
       return {
          ...state,
-         comics: payload
+         comics: [...state.comics, ...payload]
       };
    default:
       return state;

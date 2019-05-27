@@ -25,12 +25,25 @@ describe('Comics reducer', () => {
    it('sets values', () => {
       expect(
             comics({ comics: [] }, {
-            type: types.SET_COMICS,
+            type: types.ADD_COMICS,
             payload: ['a']
          })
       ).toEqual(
          {
             comics: ['a']
+         }
+      )
+   }),
+
+   it('adds values', () => {
+      expect(
+            comics({ comics: ['a', 'b'] }, {
+            type: types.ADD_COMICS,
+            payload: ['c']
+         })
+      ).toEqual(
+         {
+            comics: ['a', 'b', 'c']
          }
       )
    })
