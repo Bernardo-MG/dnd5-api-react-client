@@ -36,7 +36,7 @@ describe('<SearchForm />', () => {
       expect(props.onClick.mock.calls.length).toBe(0)
    }),
 
-   it('handles click', () => {
+   it('handles click when there is a value', () => {
       const { wrapper, props } = setup();
       const textField = wrapper.find(TextField);
       const button = wrapper.find(Button);
