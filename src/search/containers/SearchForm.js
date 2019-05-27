@@ -28,7 +28,7 @@ class SearchForm extends Component {
                value={this.state.query}
                onChange={::this._onHandleChange}
             />
-            <Button variant="contained" onClick={() =>
+            <Button variant='contained' onClick={() =>
                ::this.props.onClick(this.state.query)}>
                {this.props.buttonLabel}
             </Button>
