@@ -19,6 +19,17 @@ class SearchForm extends Component {
       this.setState({ query: event.target.value });
    };
 
+   /**
+    * Handles the button click event.
+    *
+    * @param event button click event
+    */
+   _onHandleClick = (event) => {
+      if(this.state.query) {
+         this.props.onClick(this.state.query);
+      }
+   };
+
    render() {
       return (
          <React.Fragment>
@@ -28,8 +39,7 @@ class SearchForm extends Component {
                value={this.state.query}
                onChange={::this._onHandleChange}
             />
-            <Button variant='contained' onClick={() =>
-               ::this.props.onClick(this.state.query)}>
+            <Button variant='contained' onClick={::this._onHandleClick}>
                {this.props.buttonLabel}
             </Button>
          </React.Fragment>

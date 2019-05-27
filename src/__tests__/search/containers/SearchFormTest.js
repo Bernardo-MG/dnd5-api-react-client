@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import SearchForm from 'search/containers/SearchForm';
 
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 configure({ adapter: new Adapter() });
 
@@ -25,17 +26,23 @@ function setup() {
 }
 
 describe('<SearchForm />', () => {
-   it('handles click on empty', () => {
+   it('ignores click on empty query', () => {
       const { wrapper, props } = setup();
-      const button = wrapper.find(Button)
-      button.props().onClick('')
-      expect(props.onClick.mock.calls.length).toBe(1)
+      const textField = wrapper.find(TextField);
+      const button = wrapper.find(Button);
+
+      textField.props().onChange({ target: { value: '' } })
+      button.props().onClick()
+      expect(props.onClick.mock.calls.length).toBe(0)
    }),
 
    it('handles click', () => {
       const { wrapper, props } = setup();
-      const button = wrapper.find(Button)
-      button.props().onClick('abc')
+      const textField = wrapper.find(TextField);
+      const button = wrapper.find(Button);
+
+      textField.props().onChange({ target: { value: 'abc' } })
+      button.props().onClick()
       expect(props.onClick.mock.calls.length).toBe(1)
    })
 })
