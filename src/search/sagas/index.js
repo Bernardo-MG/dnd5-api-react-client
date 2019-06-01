@@ -2,11 +2,11 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 import { SEARCH_COMIC } from 'search/actions/types';
 import { success, failure } from 'search/actions';
 
-function fetch(params) {
+export function fetch(params) {
    return params;
 }
 
-function* search(action) {
+export function* search(action) {
    if (action.payload) {
       let response;
       try {
