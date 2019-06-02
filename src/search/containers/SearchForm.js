@@ -24,8 +24,8 @@ class SearchForm extends Component {
     *
     * @param event button click event
     */
-   _onHandleClick = (event) => {
-      if(this.state.query) {
+   _onHandleClick = () => {
+      if (this.state.query) {
          this.props.onClick(this.state.query);
       }
    };
