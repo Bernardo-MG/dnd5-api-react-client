@@ -1,9 +1,9 @@
 import { SEARCH_COMIC, SEARCH_COMIC_SUCCESS, SEARCH_COMIC_FAILURE } from 'search/actions/types';
 
-export const searchComic = (value) => {
+export const searchComic = (payload) => {
    return {
       type: SEARCH_COMIC,
-      query: value
+      payload
    };
 };
 

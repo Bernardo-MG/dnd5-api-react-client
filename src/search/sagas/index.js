@@ -7,6 +7,7 @@ export function fetch(params) {
 }
 
 export function* search(action) {
+   console.log(`Received ${action}`);
    if (action.payload) {
       let response;
       try {
