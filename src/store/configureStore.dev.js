@@ -4,8 +4,9 @@ import { createLogger } from 'redux-logger';
 import rootReducer from 'reducers';
 import DevTools from 'development/components/DevTools';
 import rootSaga from 'sagas';
+import sagaMonitor from '@redux-saga/simple-saga-monitor';
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
 /**
  * Development application middleware.
@@ -29,10 +30,9 @@ const enhancer = compose(
    DevTools.instrument()
 );
 
-const configureStore = (initialState) =>
+const configureStore = () =>
    createStore(
       rootReducer,
-      initialState,
       enhancer
    );
 
