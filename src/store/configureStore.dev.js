@@ -6,7 +6,7 @@ import DevTools from 'development/components/DevTools';
 import rootSaga from 'sagas';
 import sagaMonitor from '@redux-saga/simple-saga-monitor';
 
-const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
+const sagaMiddleware = createSagaMiddleware();
 
 /**
  * Development application middleware.
