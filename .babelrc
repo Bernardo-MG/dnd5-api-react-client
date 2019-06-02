@@ -1,16 +1,25 @@
 {
    "presets": [
-      "@babel/preset-env",
+      ["@babel/preset-env", { "modules": false, "forceAllTransforms": true }],
       "@babel/preset-react"
    ],
    "plugins": [
       "@babel/plugin-proposal-function-bind",
-      ["@babel/plugin-proposal-class-properties", { "loose": true }],
+      "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread"
    ],
    "env": {
       "test": {
          "presets": ["@babel/preset-env", "@babel/preset-react"]
+      },
+      "development": {
+         "presets": [
+            ["@babel/preset-env", { "debug": true, "useBuiltIns": "usage" }],
+            ["@babel/preset-react", { "development": true, "useBuiltIns": "usage" }]
+         ],
+         "plugins": [
+            ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": "usage" }]
+         ]
       }
    }
 }
