@@ -9,23 +9,28 @@ An example REST client made with React and Redux
 
 ## Usage
 
+### Prerequisites
+
+- [npm][npm]
+- Node
+
 ### Building the project
 
-[npm][npm] is used for building the project, which requires running a few commands. All of these should be executed from the project root.
-
-First of all the dependencies should be installed:
+First of all install the dependencies:
 
 ```
 $ npm install
 ```
 
-Then there are two options. Building a development version:
+Then there are two options for building the project.
+
+You can create a development version:
 
 ```
 $ npm run development
 ```
 
-Or building a release:
+Or a production version:
 
 ```
 $ npm run build
