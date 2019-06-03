@@ -1,0 +1,23 @@
+# Travis CI Configuration file
+# @link https://travis-ci.org/
+
+# Using Python for the project
+language: node_js
+env:
+  # Development build
+  - BUILD=development
+  # Production build
+  - BUILD=build
+
+before_install:
+  # Gets scripts
+  - git clone -b v1.2.2 --single-branch https://github.com/Bernardo-MG/ci-shell-scripts.git ~/.scripts
+  # Sets scripts as executable
+  - chmod -R +x ~/.scripts/*
+  # Prepares CI environment
+  - source ~/.scripts/travis/load-travis-environment.sh
+script:
+  # Runs tests
+  - npm test
+  # Builds app
+  - npm run $BUILD

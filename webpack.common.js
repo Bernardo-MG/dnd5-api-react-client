@@ -66,7 +66,7 @@ module.exports = {
    resolve : {
       extensions : [ '.scss', '.css', '.js', '.json' ],
       modules : [
-         'src/main/js',
+         'src',
          path.resolve(__dirname, INPUT_PATH),
          'node_modules',
          path.resolve(__dirname, MODULE_PATH)
@@ -77,25 +77,7 @@ module.exports = {
             {
                test : /(\.js)$/,
                exclude: /node_modules/,
-               use: ['babel-loader', 'eslint-loader']
-            },
-            {
-               test : /\.(css|scss)$/,
-               exclude: /node_modules/,
-               use: [
-                  {
-                     loader: 'file-loader',
-                     options: {
-                        name: '[name].css'
-                     }
-                  },
-                  {
-                     loader: 'sass-loader',
-                     options: {
-                        includePaths : [ path.resolve(__dirname, MODULE_PATH) ]
-                     }
-                  }
-               ]
+               use: ['babel-loader']
             } ]
    },
    plugins

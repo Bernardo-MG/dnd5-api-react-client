@@ -5,11 +5,25 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import routes from 'routes';
 import { Router } from 'react-router';
-import { IntlProvider } from 'react-intl';
-import Cookie from 'js-cookie';
+
+import { addLocaleData, IntlProvider } from 'react-intl';
+import en from 'react-intl/locale-data/en';
 import DevTools from 'development/components/DevTools';
 
-const locale = Cookie.get('locale') || 'en';
+import localeData from 'i18n/messages.json';
+
+addLocaleData(en);
+
+const language = (navigator.languages && navigator.languages[0])
+   || navigator.language
+   || navigator.userLanguage;
+
+const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
+
+// Try full locale, try locale without region code, fallback to 'en'
+const messages = localeData[languageWithoutRegionCode]
+   || localeData[language]
+   || localeData.en;
 
 /**
  * Development root application.
@@ -18,7 +32,7 @@ const locale = Cookie.get('locale') || 'en';
  */
 const Root = ({ store, history }) =>
    (
-      <IntlProvider locale={locale}>
+      <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
             <React.Fragment>
                <Router history={history}>

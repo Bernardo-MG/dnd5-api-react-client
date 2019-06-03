@@ -20,6 +20,7 @@
       "REPO_URL": false,,
       "Blob": false,
       "document": false,
+      "navigator": false,
       "window": false
    },
    "parserOptions": {

@@ -1,4 +1,5 @@
-// import { all } from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
+import { searchSagas } from 'search/sagas';
 
 /**
  * Application redux sagas.
@@ -7,6 +8,6 @@
  */
 export default function* rootSaga() {
    yield [
-      // all([...entitySagas])
+      all([...searchSagas])
    ];
 }
