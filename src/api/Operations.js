@@ -7,7 +7,7 @@ export const Operations = class {
    }
 
    search(query) {
-      return superagent.get(this.url).query({ title: query }).end();
+      return superagent.get(`${this.url}metadata/${query}`).end();
    }
 
 };
