@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import TextField from '@material-ui/core/TextField';
 
-class SearchForm extends Component {
+class ButtonTextField extends Component {
 
    state = { query: '' };
 
@@ -48,11 +48,11 @@ class SearchForm extends Component {
 
 }
 
-SearchForm.propTypes = {
+ButtonTextField.propTypes = {
    id: PropTypes.string.isRequired,
    label: PropTypes.string.isRequired,
    buttonLabel: PropTypes.string.isRequired,
    onClick: PropTypes.func.isRequired
 };
 
-export default SearchForm;
+export default ButtonTextField;
