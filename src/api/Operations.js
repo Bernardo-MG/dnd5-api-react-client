@@ -7,6 +7,10 @@ export const Operations = class {
    }
 
    search(query) {
+      return superagent.get(`${this.url}advancedsearch.php?q=subject:${query}&output=json`).end();
+   }
+
+   metadata(query) {
       return superagent.get(`${this.url}metadata/${query}`).end();
    }
 
