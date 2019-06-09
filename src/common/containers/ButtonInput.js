@@ -24,7 +24,7 @@ class ButtonInput extends Component {
     */
    _handleClick = () => {
       if (this.state.query) {
-         this.props.onClick(this.state.query);
+         this.props.action(this.state.query);
       }
    };
 
@@ -49,7 +49,7 @@ class ButtonInput extends Component {
                onChange={::this._handleChange}
                onKeyPress={::this._handleKeyPress}
             />
-            <Button variant='contained' onClick={::this._handleClick}>
+            <Button variant='contained' action={::this._handleClick}>
                {this.props.buttonLabel}
             </Button>
          </React.Fragment>
@@ -62,7 +62,7 @@ ButtonInput.propTypes = {
    id: PropTypes.string.isRequired,
    label: PropTypes.string.isRequired,
    buttonLabel: PropTypes.string.isRequired,
-   onClick: PropTypes.func.isRequired
+   action: PropTypes.func.isRequired
 };
 
 export default ButtonInput;

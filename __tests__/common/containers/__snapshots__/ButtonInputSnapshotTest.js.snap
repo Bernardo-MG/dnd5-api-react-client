@@ -35,7 +35,6 @@ Array [
     className="MuiButtonBase-root MuiButton-root MuiButton-contained"
     disabled={false}
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}

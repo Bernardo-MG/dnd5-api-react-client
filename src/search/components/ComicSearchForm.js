@@ -14,7 +14,7 @@ const ComicSearchForm = (props) =>
       id={props.id}
       label={props.label}
       buttonLabel={props.buttonLabel}
-      onClick={props.search}
+      action={props.search}
    />;
 
 ComicSearchForm.propTypes = {

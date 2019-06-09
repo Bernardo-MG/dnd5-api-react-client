@@ -10,7 +10,7 @@ describe('<ButtonInput />', () => {
                id='testButtonInput'
                label='label'
                buttonLabel='button label'
-               onClick={ () => 'action' } />)
+               action={ () => 'action' } />)
          .toJSON();
       expect(tree).toMatchSnapshot();
    })

@@ -14,7 +14,7 @@ function setup() {
       id: 'id',
       label: 'label',
       buttonLabel: 'buttonLabel',
-      onClick: jest.fn()
+      action: jest.fn()
    }
 
    const wrapper = shallow(<ButtonInput {...props} />)
@@ -32,8 +32,8 @@ describe('<ButtonInput />', () => {
       const button = wrapper.find(Button);
 
       textField.props().onChange({ target: { value: '' } });
-      button.props().onClick();
-      expect(props.onClick.mock.calls.length).toBe(0);
+      button.props().action();
+      expect(props.action.mock.calls.length).toBe(0);
    }),
 
    it('handles click when there is a value', () => {
@@ -42,8 +42,8 @@ describe('<ButtonInput />', () => {
       const button = wrapper.find(Button);
 
       textField.props().onChange({ target: { value: 'abc' } });
-      button.props().onClick();
-      expect(props.onClick.mock.calls.length).toBe(1);
+      button.props().action();
+      expect(props.action.mock.calls.length).toBe(1);
    }),
 
    it('ignores enter on empty text', () => {
@@ -52,7 +52,7 @@ describe('<ButtonInput />', () => {
 
       textField.props().onChange({ target: { value: '' } });
       textField.simulate('keypress', {key: 'Enter'});
-      expect(props.onClick.mock.calls.length).toBe(0);
+      expect(props.action.mock.calls.length).toBe(0);
    }),
 
    it('handles enter when there is a value', () => {
@@ -61,7 +61,7 @@ describe('<ButtonInput />', () => {
 
       textField.props().onChange({ target: { value: 'abc' } });
       textField.simulate('keypress', {key: 'Enter'});
-      expect(props.onClick.mock.calls.length).toBe(1);
+      expect(props.action.mock.calls.length).toBe(1);
    }),
 
    it('does not handle action for text', () => {
@@ -70,6 +70,6 @@ describe('<ButtonInput />', () => {
 
       textField.props().onChange({ target: { value: 'abc' } });
       textField.simulate('keypress', {key: 'a'});
-      expect(props.onClick.mock.calls.length).toBe(0);
+      expect(props.action.mock.calls.length).toBe(0);
    })
 })
