@@ -15,18 +15,27 @@ class ButtonInput extends Component {
     *
     * @param event value change event
     */
-   _onHandleChange = (event) => {
+   _handleChange = (event) => {
       this.setState({ query: event.target.value });
    };
 
    /**
     * Handles the button click event.
-    *
-    * @param event button click event
     */
-   _onHandleClick = () => {
+   _handleClick = () => {
       if (this.state.query) {
          this.props.onClick(this.state.query);
+      }
+   };
+
+   /**
+    * Handles the key event.
+    *
+    * @param event key press event
+    */
+   _handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+         this._handleClick();
       }
    };
 
@@ -37,9 +46,10 @@ class ButtonInput extends Component {
                id={this.props.id}
                label={this.props.label}
                value={this.state.query}
-               onChange={::this._onHandleChange}
+               onChange={::this._handleChange}
+               onKeyPress={::this._handleKeyPress}
             />
-            <Button variant='contained' onClick={::this._onHandleClick}>
+            <Button variant='contained' onClick={::this._handleClick}>
                {this.props.buttonLabel}
             </Button>
          </React.Fragment>
