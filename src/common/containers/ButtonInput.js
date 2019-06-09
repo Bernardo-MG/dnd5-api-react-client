@@ -22,9 +22,11 @@ class ButtonInput extends Component {
    /**
     * Handles the button click event.
     */
-   _handleClick = () => {
-      if (this.state.query) {
-         this.props.action(this.state.query);
+   _handleClick = (event) => {
+      if ((event) && (event.type === 'click')) {
+         if (this.state.query) {
+            this.props.action(this.state.query);
+         }
       }
    };
 
@@ -34,14 +36,16 @@ class ButtonInput extends Component {
     * @param event key press event
     */
    _handleKeyPress = (event) => {
-      if (event.key === 'Enter') {
-         this._handleClick();
+      if ((event) && (event.key === 'Enter')) {
+         if (this.state.query) {
+            this.props.action(this.state.query);
+         }
       }
    };
 
    render() {
       return (
-         <React.Fragment>
+         <form noValidate autoComplete="off">
             <TextField
                id={this.props.id}
                label={this.props.label}
@@ -49,10 +53,10 @@ class ButtonInput extends Component {
                onChange={::this._handleChange}
                onKeyPress={::this._handleKeyPress}
             />
-            <Button variant='contained' action={::this._handleClick}>
+            <Button variant='contained' onClick={::this._handleClick}>
                {this.props.buttonLabel}
             </Button>
-         </React.Fragment>
+         </form>
       );
    }
 

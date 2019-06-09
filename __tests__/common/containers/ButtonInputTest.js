@@ -26,23 +26,23 @@ function setup() {
 }
 
 describe('<ButtonInput />', () => {
-   it('ignores click on empty text', () => {
+   it('ignores button click on empty text', () => {
       const { wrapper, props } = setup();
       const textField = wrapper.find(TextField);
       const button = wrapper.find(Button);
 
       textField.props().onChange({ target: { value: '' } });
-      button.props().action();
+      button.simulate('click', {type: 'click'});
       expect(props.action.mock.calls.length).toBe(0);
    }),
 
-   it('handles click when there is a value', () => {
+   it('handles button click when there is a value', () => {
       const { wrapper, props } = setup();
       const textField = wrapper.find(TextField);
       const button = wrapper.find(Button);
 
       textField.props().onChange({ target: { value: 'abc' } });
-      button.props().action();
+      button.simulate('click', {type: 'click'});
       expect(props.action.mock.calls.length).toBe(1);
    }),
 

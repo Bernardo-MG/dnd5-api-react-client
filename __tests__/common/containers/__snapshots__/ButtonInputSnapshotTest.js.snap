@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ButtonInput /> renders correctly 1`] = `
-Array [
+<form
+  autoComplete="off"
+  noValidate={true}
+>
   <div
     className="MuiFormControl-root MuiTextField-root"
     onKeyPress={[Function]}
@@ -30,11 +33,12 @@ Array [
         value=""
       />
     </div>
-  </div>,
+  </div>
   <button
     className="MuiButtonBase-root MuiButton-root MuiButton-contained"
     disabled={false}
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
@@ -52,6 +56,6 @@ Array [
     >
       button label
     </span>
-  </button>,
-]
+  </button>
+</form>
 `;
