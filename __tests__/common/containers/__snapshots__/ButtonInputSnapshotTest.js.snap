@@ -4,6 +4,7 @@ exports[`<ButtonInput /> renders correctly 1`] = `
 Array [
   <div
     className="MuiFormControl-root MuiTextField-root"
+    onKeyPress={[Function]}
   >
     <label
       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
