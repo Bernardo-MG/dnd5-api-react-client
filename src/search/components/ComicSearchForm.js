@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import ButtonTextField from 'common/containers/ButtonTextField';
+import ButtonInput from 'common/containers/ButtonInput';
 
 import { searchComic } from 'search/actions';
 
 const ComicSearchForm = (props) =>
-   <ButtonTextField
+   <ButtonInput
       id={props.id}
       label={props.label}
       buttonLabel={props.buttonLabel}

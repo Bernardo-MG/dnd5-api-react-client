@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ButtonTextField /> renders correctly 1`] = `
+exports[`<ButtonInput /> renders correctly 1`] = `
 Array [
   <div
     className="MuiFormControl-root MuiTextField-root"
@@ -8,7 +8,7 @@ Array [
     <label
       className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
       data-shrink={false}
-      htmlFor="testButtonTextField"
+      htmlFor="testButtonInput"
     >
       label
     </label>
@@ -20,7 +20,7 @@ Array [
         aria-invalid={false}
         className="MuiInputBase-input MuiInput-input"
         disabled={false}
-        id="testButtonTextField"
+        id="testButtonInput"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}

@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 
-import ButtonTextField from 'common/containers/ButtonTextField';
+import ButtonInput from 'common/containers/ButtonInput';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -17,7 +17,7 @@ function setup() {
       onClick: jest.fn()
    }
 
-   const wrapper = shallow(<ButtonTextField {...props} />)
+   const wrapper = shallow(<ButtonInput {...props} />)
 
    return {
       props,
@@ -25,7 +25,7 @@ function setup() {
    }
 }
 
-describe('<ButtonTextField />', () => {
+describe('<ButtonInput />', () => {
    it('ignores click on empty text', () => {
       const { wrapper, props } = setup();
       const textField = wrapper.find(TextField);

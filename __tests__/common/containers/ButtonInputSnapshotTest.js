@@ -1,13 +1,13 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
 
-import ButtonTextField from 'common/containers/ButtonTextField';
+import ButtonInput from 'common/containers/ButtonInput';
 
-describe('<ButtonTextField />', () => {
+describe('<ButtonInput />', () => {
    it('renders correctly', () => {
       const tree = renderer
-         .create(<ButtonTextField
-               id='testButtonTextField'
+         .create(<ButtonInput
+               id='testButtonInput'
                label='label'
                buttonLabel='button label'
                onClick={ () => 'action' } />)
