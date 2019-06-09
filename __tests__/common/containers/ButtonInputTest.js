@@ -31,9 +31,9 @@ describe('<ButtonInput />', () => {
       const textField = wrapper.find(TextField);
       const button = wrapper.find(Button);
 
-      textField.props().onChange({ target: { value: '' } })
-      button.props().onClick()
-      expect(props.onClick.mock.calls.length).toBe(0)
+      textField.props().onChange({ target: { value: '' } });
+      button.props().onClick();
+      expect(props.onClick.mock.calls.length).toBe(0);
    }),
 
    it('handles click when there is a value', () => {
@@ -41,8 +41,35 @@ describe('<ButtonInput />', () => {
       const textField = wrapper.find(TextField);
       const button = wrapper.find(Button);
 
-      textField.props().onChange({ target: { value: 'abc' } })
-      button.props().onClick()
-      expect(props.onClick.mock.calls.length).toBe(1)
+      textField.props().onChange({ target: { value: 'abc' } });
+      button.props().onClick();
+      expect(props.onClick.mock.calls.length).toBe(1);
+   }),
+
+   it('ignores enter on empty text', () => {
+      const { wrapper, props } = setup();
+      const textField = wrapper.find(TextField);
+
+      textField.props().onChange({ target: { value: '' } });
+      textField.simulate('keypress', {key: 'Enter'});
+      expect(props.onClick.mock.calls.length).toBe(0);
+   }),
+
+   it('handles enter when there is a value', () => {
+      const { wrapper, props } = setup();
+      const textField = wrapper.find(TextField);
+
+      textField.props().onChange({ target: { value: 'abc' } });
+      textField.simulate('keypress', {key: 'Enter'});
+      expect(props.onClick.mock.calls.length).toBe(1);
+   }),
+
+   it('does not handle action for text', () => {
+      const { wrapper, props } = setup();
+      const textField = wrapper.find(TextField);
+
+      textField.props().onChange({ target: { value: 'abc' } });
+      textField.simulate('keypress', {key: 'a'});
+      expect(props.onClick.mock.calls.length).toBe(0);
    })
 })
