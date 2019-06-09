@@ -1,3 +1,3 @@
 import { Operations } from 'api/Operations';
 
-export const comicApi = new Operations('https://archive.org/');
+export const archiveApi = new Operations('https://archive.org/');

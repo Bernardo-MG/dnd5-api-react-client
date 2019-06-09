@@ -1,14 +1,13 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { SEARCH_COMIC } from 'search/actions/types';
 import { success, failure } from 'search/actions';
-import { comicApi } from 'api';
+import { archiveApi } from 'api';
 
-export function fetch(params) {
-   return comicApi.search(params);
+export function fetch(query) {
+   return archiveApi.search(query);
 }
 
 export function* search(action) {
-   console.log(`Received ${action}`);
    if (action.payload) {
       let response;
       try {
