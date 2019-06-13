@@ -1,10 +1,10 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { SEARCH_COMIC } from 'search/actions/types';
 import { success, failure } from 'search/actions';
-import { archiveApi } from 'api';
+import { searchApi } from 'api';
 
 export function fetch(query) {
-   return archiveApi.search(query);
+   return searchApi.search(query);
 }
 
 export function* search(action) {
