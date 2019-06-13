@@ -7,7 +7,8 @@ export const Operations = class {
    }
 
    search(query) {
-      return superagent.get(`https://openlibrary.org/search.json?q=${query}`).end();
+      return superagent.get(`https://openlibrary.org/search.json?q=${query}`).then((response) =>
+         response.text);
    }
 
 };

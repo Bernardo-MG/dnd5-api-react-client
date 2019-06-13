@@ -12,7 +12,7 @@ export function* search(action) {
       let response;
       try {
          response = yield call(fetch, action.payload);
-         yield put(success(response.payload));
+         yield put(success(response));
       } catch (err) {
          yield put(failure(err));
       }
