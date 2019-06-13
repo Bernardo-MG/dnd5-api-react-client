@@ -1,6 +1,6 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { SEARCH_COMIC } from 'search/actions/types';
-import { success, failure } from 'search/actions';
+import { SEARCH, SEARCH_SUCCESS } from 'search/actions/types';
+import { success, failure, setTotal, setPage } from 'search/actions';
 import { searchApi } from 'api';
 
 export function fetch(query) {
@@ -21,6 +21,12 @@ export function* search(action) {
    }
 }
 
+export function* searchSuccess(action) {
+   yield put(setTotal(action.payload.numFound));
+   yield put(setPage());
+}
+
 export const searchSagas = [
-   takeLatest(SEARCH_COMIC, search)
+   takeLatest(SEARCH, search),
+   takeLatest(SEARCH_SUCCESS, searchSuccess)
 ];

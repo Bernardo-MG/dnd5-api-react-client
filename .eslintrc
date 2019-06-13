@@ -17,7 +17,7 @@
    },
    "globals": {
       "APP_VERSION": false,
-      "REPO_URL": false,,
+      "REPO_URL": false,
       "Blob": false,
       "document": false,
       "navigator": false,
@@ -45,7 +45,8 @@
       "padded-blocks": ["warn", { "classes": "always" }],
       "class-methods-use-this": ["warn"],
       "implicit-arrow-linebreak": ["error", "below"],
-      "no-trailing-spaces": ["error", { "ignoreComments": true }]
+      "no-trailing-spaces": ["error", { "ignoreComments": true }],
+      "object-curly-newline": ["error", {"ImportDeclaration": "never"}]
    },
    "extends": [
       "plugin:react/recommended",
