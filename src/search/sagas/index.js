@@ -17,12 +17,12 @@ export function* search(action) {
    }
 }
 
-export function* searchSuccess(action) {
+export function* updatePage(action) {
    yield put(setTotal(action.payload.numFound));
    yield put(setPage());
 }
 
 export const searchSagas = [
    takeLatest(SEARCH, search),
-   takeLatest(SEARCH_SUCCESS, searchSuccess)
+   takeLatest(SEARCH_SUCCESS, updatePage)
 ];

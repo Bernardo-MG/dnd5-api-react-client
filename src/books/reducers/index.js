@@ -1,6 +1,6 @@
-import * as types from 'actions/types';
+import * as types from 'books/actions/types';
 
-const affinities = (state = { comics: [] }, action) => {
+const books = (state = { books: {} }, action) => {
    const { type } = action;
    let { payload } = action;
 
@@ -9,19 +9,19 @@ const affinities = (state = { comics: [] }, action) => {
    }
 
    switch (type) {
-   case types.CLEAR_COMICS:
+   case types.CLEAR_BOOKS:
       return {
          ...state,
-         comics: []
+         books: {}
       };
-   case types.ADD_COMICS:
+   case types.ADD_BOOKS:
       return {
          ...state,
-         comics: [...state.comics, ...payload]
+         books: { ...state.books, ...payload }
       };
    default:
       return state;
    }
 };
 
-export default affinities;
+export default books;
