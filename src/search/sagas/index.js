@@ -3,15 +3,11 @@ import { SEARCH, SEARCH_SUCCESS } from 'search/actions/types';
 import { success, failure, setTotal, setPage } from 'search/actions';
 import { searchApi } from 'api';
 
-export function fetch(query) {
-   return searchApi.search(query);
-}
-
 export function* search(action) {
    if (action.payload) {
       let response;
       try {
-         response = yield call(fetch, action.payload);
+         response = yield call(searchApi.search, action.payload);
          yield put(success(response));
       } catch (err) {
          yield put(failure(err));
