@@ -6,7 +6,7 @@ import { book } from 'books/schema';
 
 export function* saveBooks(action) {
    const normalized = normalize(action.payload.docs, book);
-   const books = normalized.entities.docs.undefined;
+   const books = normalized.entities.books.undefined;
    yield put(addBooks(books));
 }
 
