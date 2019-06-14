@@ -2,10 +2,10 @@ import { put, takeLatest } from 'redux-saga/effects';
 import { SEARCH_SUCCESS } from 'search/actions/types';
 import { addBooks } from 'books/actions';
 import { normalize } from 'normalizr';
-import { document } from 'books/schema';
+import { book } from 'books/schema';
 
 export function* saveBooks(action) {
-   const normalized = normalize(action.payload.docs, document);
+   const normalized = normalize(action.payload.docs, book);
    const books = normalized.entities.docs.undefined;
    yield put(addBooks(books));
 }

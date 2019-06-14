@@ -18,8 +18,10 @@ export const subject = new schema.Entity('subjects');
 /**
  * Document schema.
  */
-export const document = new schema.Entity('docs', {
+export const book = new schema.Entity('books', {
    author_key: [authorKey],
    language: [language],
    subject: [subject]
+}, {
+   idAttribute: 'key'
 });
