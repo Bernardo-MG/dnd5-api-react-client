@@ -1,22 +1,36 @@
-import { SEARCH_COMIC, SEARCH_COMIC_SUCCESS, SEARCH_COMIC_FAILURE } from 'search/actions/types';
+import { SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE, SET_PAGE, SET_TOTAL } from 'search/actions/types';
 
 export const searchComic = (payload) => {
    return {
-      type: SEARCH_COMIC,
+      type: SEARCH,
       payload
    };
 };
 
 export const success = (payload) => {
    return {
-      type: SEARCH_COMIC_SUCCESS,
+      type: SEARCH_SUCCESS,
       payload
    };
 };
 
 export const failure = (payload) => {
    return {
-      type: SEARCH_COMIC_FAILURE,
+      type: SEARCH_FAILURE,
+      payload
+   };
+};
+
+export const setPage = (payload) => {
+   return {
+      type: SET_PAGE,
+      payload
+   };
+};
+
+export const setTotal = (payload) => {
+   return {
+      type: SET_TOTAL,
       payload
    };
 };

@@ -1,4 +1,9 @@
-export const SEARCH_COMIC = 'SEARCH_COMIC';
+export const SEARCH = 'SEARCH';
 
-export const SEARCH_COMIC_SUCCESS = 'SEARCH_COMIC_SUCCESS';
-export const SEARCH_COMIC_FAILURE = 'SEARCH_COMIC_FAILURE';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_FAILURE = 'SEARCH_FAILURE';
+
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+
+export const SET_PAGE = 'SET_PAGE';
+export const SET_TOTAL = 'SET_TOTAL';

@@ -1,20 +1,33 @@
 import '@babel/polyfill';
-import { search, fetch } from 'search/sagas';
-import { call } from 'redux-saga/effects';
+import { search } from 'search/sagas';
+import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
+import { searchApi } from 'api';
+import { success } from 'search/actions';
 
 const generator = cloneableGenerator(search)({ payload: 'abc' }, 0);
 const generatorEmpty = cloneableGenerator(search)({}, 0);
 
 describe('Search requests saga', () => {
-   it('tries to fetch query', () => {
+   it('tries to search', () => {
       const gen = generator.clone();
       expect(
          gen.next().value
          ).toEqual(
-            call(fetch, 'abc')
+            call(searchApi.search, 'abc')
       )
    }),
+
+   it('sends success action', () => {
+      const gen = generator.clone();
+      gen.next();
+      expect(
+         gen.next().value
+         ).toEqual(
+            put(success())
+      )
+   }),
+
    it('returns nothing if payload is missing', () => {
       const gen = generatorEmpty.clone();
       expect(

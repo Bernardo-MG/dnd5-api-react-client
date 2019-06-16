@@ -5,16 +5,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SearchForm from 'search/containers/SearchForm';
+import ButtonInput from 'common/containers/ButtonInput';
 
 import { searchComic } from 'search/actions';
 
 const ComicSearchForm = (props) =>
-   <SearchForm
+   <ButtonInput
       id={props.id}
       label={props.label}
       buttonLabel={props.buttonLabel}
-      onClick={props.search}
+      action={props.search}
    />;
 
 ComicSearchForm.propTypes = {
