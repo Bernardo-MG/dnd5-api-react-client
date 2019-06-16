@@ -5,6 +5,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import BaseLayout from 'layout/containers/BaseLayout';
 
 import ComicSearchForm from 'search/components/ComicSearchForm';
+import SearchResultList from 'search/components/SearchResultList';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -16,6 +17,7 @@ const SearchView = ({ intl }) =>
             label={ intl.formatMessage({ id: 'form.title' }) }
             buttonLabel={ intl.formatMessage({ id: 'form.search' }) }
          />
+         <SearchResultList />
       </Grid>
    </BaseLayout>;
 
