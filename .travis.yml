@@ -16,6 +16,9 @@ before_install:
   - chmod -R +x ~/.scripts/*
   # Prepares CI environment
   - source ~/.scripts/travis/load-travis-environment.sh
+install:
+  # sshpass for deployment
+  - sudo apt-get install sshpass
 script:
   # Runs tests
   - npm test
