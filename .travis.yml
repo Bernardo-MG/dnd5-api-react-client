@@ -5,7 +5,7 @@
 language: node_js
 env:
   # Development build
-  - BUILD=development DEPLOY_DOCS=true
+  - BUILD=development
   # Production build
   - BUILD=build DEPLOY_DOCS=true
 
