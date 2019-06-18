@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
 import routes from 'routes';
-import { Router } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
