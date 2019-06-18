@@ -80,7 +80,7 @@ The project has been released under the [MIT License][license].
 [issues]: https://github.com/Bernardo-MG/react-rest-client-example/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [npm]: https://www.npmjs.com/
-[scm]: http://github.com/Bernardo-MG/react-rest-client-example
+[scm]: https://github.com/Bernardo-MG/react-rest-client-example
 
-[demo-site]: http://docs.bernardomg.com/react-rest-client-example
-[demo-site-development]: http://docs.bernardomg.com/development/react-rest-client-example
+[demo-site]: https://docs.bernardomg.com/react-rest-client-example
+[demo-site-development]: https://docs.bernardomg.com/development/react-rest-client-example
