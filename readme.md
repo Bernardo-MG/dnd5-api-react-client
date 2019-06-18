@@ -7,6 +7,12 @@ An example REST client made with React and Redux
 - React + Redux
 - REST queries
 
+## Check it
+
+There is an [online demo site][demo-site] which always reflects the latest version, taken from the master branch.
+
+And a [development demo site][demo-site-development], taken from the development branch.
+
 ## Usage
 
 ### Prerequisites
@@ -74,4 +80,7 @@ The project has been released under the [MIT License][license].
 [issues]: https://github.com/Bernardo-MG/react-rest-client-example/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [npm]: https://www.npmjs.com/
-[scm]: http://github.com/Bernardo-MG/react-rest-client-example
+[scm]: https://github.com/Bernardo-MG/react-rest-client-example
+
+[demo-site]: https://docs.bernardomg.com/react-rest-client-example
+[demo-site-development]: https://docs.bernardomg.com/development/react-rest-client-example

@@ -7,7 +7,7 @@ env:
   # Development build
   - BUILD=development
   # Production build
-  - BUILD=build
+  - BUILD=build DEPLOY_DOCS=true
 
 before_install:
   # Gets scripts
@@ -16,8 +16,21 @@ before_install:
   - chmod -R +x ~/.scripts/*
   # Prepares CI environment
   - source ~/.scripts/travis/load-travis-environment.sh
+install:
+  # npm dependencies
+  - npm install -g node-bin-setup
+  - npm install -g node
+  - npm install
+  # sshpass for deployment
+  - sudo apt-get install sshpass
 script:
   # Runs tests
   - npm test
   # Builds app
   - npm run $BUILD
+after_success:
+  # Deploys the generated site
+  - cd build
+  - ~/.scripts/deploy/deploy-ssh.sh $DO_DEPLOY_DOCS_RELEASE $DEPLOY_DOCS_USERNAME $DEPLOY_DOCS_PASSWORD $DEPLOY_DOCS_HOST $DEPLOY_DOCS_PORT $DEPLOY_DOCS_PATH_RELEASE
+  - ~/.scripts/deploy/deploy-ssh.sh $DO_DEPLOY_DOCS_DEVELOP $DEPLOY_DOCS_USERNAME $DEPLOY_DOCS_PASSWORD $DEPLOY_DOCS_HOST $DEPLOY_DOCS_PORT $DEPLOY_DOCS_PATH_DEVELOP
+  
