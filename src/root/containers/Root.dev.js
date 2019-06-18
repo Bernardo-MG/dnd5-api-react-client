@@ -30,12 +30,12 @@ const messages = localeData[languageWithoutRegionCode]
  * 
  * It will include the dev tools.
  */
-const Root = ({ store, history }) =>
+const Root = ({ store }) =>
    (
       <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
             <React.Fragment>
-               <Router history={history}>
+               <Router>
                   {routes}
                </Router>
                <DevTools />

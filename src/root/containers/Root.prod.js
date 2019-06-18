@@ -27,11 +27,11 @@ const messages = localeData[languageWithoutRegionCode]
 /**
  * Production root application.
  */
-const Root = ({ store, history }) =>
+const Root = ({ store }) =>
    (
       <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
-            <Router history={history}>
+            <Router>
                {routes}
             </Router>
          </Provider>
