@@ -40,9 +40,7 @@ const Root = ({ store }) =>
 
 Root.propTypes = {
    /** Application store */
-   store: PropTypes.object.isRequired,
-   /** Application routes history */
-   history: PropTypes.object.isRequired
+   store: PropTypes.object.isRequired
 };
 
 export default Root;
