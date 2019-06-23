@@ -35,7 +35,7 @@ const Root = ({ store }) =>
       <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
             <React.Fragment>
-               <Router basename="https://docs.bernardomg.com/development/react-rest-client-example/">
+               <Router>
                   {routes}
                </Router>
                <DevTools />
