@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
 import routes from 'routes';
-import { Router } from 'react-router';
+import { HashRouter as Router } from 'react-router-dom';
 
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -27,11 +27,11 @@ const messages = localeData[languageWithoutRegionCode]
 /**
  * Production root application.
  */
-const Root = ({ store, history }) =>
+const Root = ({ store }) =>
    (
       <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
-            <Router history={history}>
+            <Router>
                {routes}
             </Router>
          </Provider>
@@ -40,9 +40,7 @@ const Root = ({ store, history }) =>
 
 Root.propTypes = {
    /** Application store */
-   store: PropTypes.object.isRequired,
-   /** Application routes history */
-   history: PropTypes.object.isRequired
+   store: PropTypes.object.isRequired
 };
 
 export default Root;
