@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Provider } from 'react-redux';
 import routes from 'routes';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -35,7 +35,7 @@ const Root = ({ store }) =>
       <IntlProvider locale={language} messages={messages}>
          <Provider store={store}>
             <React.Fragment>
-               <Router basename="https://docs.bernardomg.com/development/react-rest-client-example/">
+               <Router>
                   {routes}
                </Router>
                <DevTools />
