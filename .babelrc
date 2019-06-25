@@ -14,10 +14,7 @@
          }
       ],
       [
-         "@babel/preset-react",
-         {
-            useBuiltIns: "usage"
-         }
+         "@babel/preset-react"
       ]
    ],
    "plugins":[
@@ -48,13 +45,15 @@
             [
                "@babel/preset-env",
                {
-                  "debug":true
+                  "debug":true,
+                  useBuiltIns: "usage"
                }
             ],
             [
                "@babel/preset-react",
                {
-                  "development":true
+                  "development":true,
+                  useBuiltIns: "usage"
                }
             ]
          ]
