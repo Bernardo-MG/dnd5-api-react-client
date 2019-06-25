@@ -3,6 +3,11 @@
       [
          "@babel/preset-env",
          {
+            "targets":{
+               "browsers":[
+                  "last 2 versions"
+               ]
+            },
             "modules":false,
             "forceAllTransforms":true
          }
@@ -12,7 +17,13 @@
    "plugins":[
       "@babel/plugin-proposal-function-bind",
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread",
+      [
+         "react-intl",
+         {
+            "messagesDir":"./build/messages/"
+         }
+      ]
    ],
    "env":{
       "test":{
