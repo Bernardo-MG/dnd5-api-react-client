@@ -9,15 +9,26 @@
                ]
             },
             "modules":false,
-            "forceAllTransforms":true
+            "forceAllTransforms":true,
+            useBuiltIns: "usage"
          }
       ],
-      "@babel/preset-react"
+      [
+         "@babel/preset-react",
+         {
+            useBuiltIns: "usage"
+         }
+      ]
    ],
    "plugins":[
       "@babel/plugin-proposal-function-bind",
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
+      [
+         "@babel/plugin-proposal-object-rest-spread",
+         {
+            "useBuiltIns":"usage"
+         }
+      ],
       [
          "react-intl",
          {
@@ -37,23 +48,13 @@
             [
                "@babel/preset-env",
                {
-                  "debug":true,
-                  "useBuiltIns":"usage"
+                  "debug":true
                }
             ],
             [
                "@babel/preset-react",
                {
-                  "development":true,
-                  "useBuiltIns":"usage"
-               }
-            ]
-         ],
-         "plugins":[
-            [
-               "@babel/plugin-proposal-object-rest-spread",
-               {
-                  "useBuiltIns":"usage"
+                  "development":true
                }
             ]
          ]
