@@ -22,7 +22,7 @@ const language = (navigator.languages && navigator.languages[0])
  */
 const Root = ({ store }) =>
    (
-      <IntlProvider locale={language} messages={localeData}>
+      <IntlProvider locale={language} defaultLocale='en' messages={localeData}>
          <Provider store={store}>
             <React.Fragment>
                <Router>
