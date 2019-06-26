@@ -6,9 +6,12 @@ import { Provider } from 'react-redux';
 import routes from 'routes';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import en from 'react-intl/locale-data/en';
 
 import localeData from 'i18n/messages.json';
+
+addLocaleData(en);
 
 const language = (navigator.languages && navigator.languages[0])
    || navigator.language
