@@ -6,34 +6,18 @@ import { Provider } from 'react-redux';
 import routes from 'routes';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { IntlProvider, addLocaleData } from 'react-intl';
-import en from 'react-intl/locale-data/en';
+import { IntlProvider } from 'react-intl';
 
 import DevTools from 'development/components/DevTools';
-
-import localeData from 'i18n/messages.json';
-
-addLocaleData(en);
-
-let language = (navigator.languages && navigator.languages[0])
-   || navigator.language
-   || navigator.userLanguage;
-
-const loadedLocales = ['en'];
-
-if (!loadedLocales.some((locale) =>
-   language.startsWith(locale))) {
-   language = 'en';
-}
 
 /**
  * Development root application.
  * 
  * It will include the dev tools.
  */
-const Root = ({ store }) =>
+const Root = ({ store, language, i18nMessages }) =>
    (
-      <IntlProvider locale={language} defaultLocale='en' messages={localeData}>
+      <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
          <Provider store={store}>
             <React.Fragment>
                <Router>
@@ -47,7 +31,11 @@ const Root = ({ store }) =>
 
 Root.propTypes = {
    /** Application store */
-   store: PropTypes.object.isRequired
+   store: PropTypes.object.isRequired,
+   /** Application language */
+   language: PropTypes.string.isRequired,
+   /** Internationalization messages */
+   i18nMessages: PropTypes.array.isRequired
 };
 
 export default Root;
