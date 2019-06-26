@@ -15,9 +15,16 @@ import localeData from 'i18n/messages.json';
 
 addLocaleData(en);
 
-const language = (navigator.languages && navigator.languages[0])
+let language = (navigator.languages && navigator.languages[0])
    || navigator.language
    || navigator.userLanguage;
+
+const loadedLocales = ['en'];
+
+if (!loadedLocales.some((locale) =>
+   language.startsWith(locale))) {
+   language = 'en';
+}
 
 /**
  * Development root application.
