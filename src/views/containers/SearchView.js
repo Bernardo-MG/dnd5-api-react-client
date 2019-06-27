@@ -11,15 +11,15 @@ import Grid from '@material-ui/core/Grid';
 
 const SearchView = ({ intl }) =>
    <BaseLayout>
-      <Grid container>
-         <Grid item xs={12} justify='center'>
+      <Grid container direction='column'>
+         <Grid container justify='center'>
             <ComicSearchForm
                id='title'
                label={ intl.formatMessage({ id: 'form.title' }) }
                buttonLabel={ intl.formatMessage({ id: 'form.search' }) }
             />
          </Grid>
-         <Grid item xs={12} justify='center'>
+         <Grid container justify='center'>
             <SearchResultList />
          </Grid>
       </Grid>
