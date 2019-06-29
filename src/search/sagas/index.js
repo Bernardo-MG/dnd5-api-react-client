@@ -1,6 +1,6 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { SEARCH, SEARCH_SUCCESS } from 'search/actions/types';
-import { success, failure, setTotal, setPage } from 'search/actions/books';
+import { SEARCH_BOOK } from 'search/actions/types';
+import { success, failure } from 'search/actions/books';
 import { searchApi } from 'api';
 
 export function* search(action) {
@@ -17,12 +17,6 @@ export function* search(action) {
    }
 }
 
-export function* updatePage(action) {
-   yield put(setTotal(action.payload.numFound));
-   yield put(setPage());
-}
-
 export const searchSagas = [
-   takeLatest(SEARCH, search),
-   takeLatest(SEARCH_SUCCESS, updatePage)
+   takeLatest(SEARCH_BOOK, search)
 ];

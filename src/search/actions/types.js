@@ -1,9 +1,6 @@
-export const SEARCH = 'SEARCH';
+export const SEARCH_BOOK = 'SEARCH_BOOK';
 
-export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
-export const SEARCH_FAILURE = 'SEARCH_FAILURE';
+export const SEARCH_BOOK_SUCCESS = 'SEARCH_BOOK_SUCCESS';
+export const SEARCH_BOOK_FAILURE = 'SEARCH_BOOK_FAILURE';
 
-export const CLEAR_SEARCH = 'CLEAR_SEARCH';
-
-export const SET_PAGE = 'SET_PAGE';
-export const SET_TOTAL = 'SET_TOTAL';
+export const CLEAR_SEARCH_BOOK = 'CLEAR_SEARCH_BOOK';

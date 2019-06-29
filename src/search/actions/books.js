@@ -1,36 +1,22 @@
-import { SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE, SET_PAGE, SET_TOTAL } from 'search/actions/types';
+import * as types from 'search/actions/types';
 
 export const search = (payload) => {
    return {
-      type: SEARCH,
+      type: types.SEARCH_BOOK,
       payload
    };
 };
 
 export const success = (payload) => {
    return {
-      type: SEARCH_SUCCESS,
+      type: types.SEARCH_BOOK_SUCCESS,
       payload
    };
 };
 
 export const failure = (payload) => {
    return {
-      type: SEARCH_FAILURE,
-      payload
-   };
-};
-
-export const setPage = (payload) => {
-   return {
-      type: SET_PAGE,
-      payload
-   };
-};
-
-export const setTotal = (payload) => {
-   return {
-      type: SET_TOTAL,
+      type: types.SEARCH_BOOK_FAILURE,
       payload
    };
 };

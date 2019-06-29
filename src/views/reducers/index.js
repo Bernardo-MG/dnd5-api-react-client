@@ -9,13 +9,13 @@ const views = (state = { searchingBooks: false }, action) => {
    }
 
    switch (type) {
-   case types.SEARCH:
+   case types.SEARCH_BOOK:
       return {
          ...state,
          searchingBooks: true
       };
-   case types.SEARCH_SUCCESS:
-   case types.SEARCH_FAILURE:
+   case types.SEARCH_BOOK_SUCCESS:
+   case types.SEARCH_BOOK_FAILURE:
       return {
          ...state,
          searchingBooks: false
