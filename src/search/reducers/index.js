@@ -12,8 +12,12 @@ const search = (state = { ids: [] }, action) => {
    case types.CLEAR_SEARCH_BOOK:
       return {
          ...state,
-         total: 0,
-         currentPage: 0
+         ids: []
+      };
+   case types.SEARCH_BOOK_SUCCESS:
+      return {
+         ...state,
+         ids: payload
       };
    default:
       return state;
