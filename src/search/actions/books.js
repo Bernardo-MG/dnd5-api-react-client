@@ -1,6 +1,6 @@
 import { SEARCH, SEARCH_SUCCESS, SEARCH_FAILURE, SET_PAGE, SET_TOTAL } from 'search/actions/types';
 
-export const searchComic = (payload) => {
+export const search = (payload) => {
    return {
       type: SEARCH,
       payload
