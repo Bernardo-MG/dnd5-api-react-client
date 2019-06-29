@@ -6,30 +6,14 @@ import { Provider } from 'react-redux';
 import routes from 'routes';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { addLocaleData, IntlProvider } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-
-import localeData from 'i18n/messages.json';
-
-addLocaleData(en);
-
-const language = (navigator.languages && navigator.languages[0])
-   || navigator.language
-   || navigator.userLanguage;
-
-const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
-
-// Try full locale, try locale without region code, fallback to 'en'
-const messages = localeData[languageWithoutRegionCode]
-   || localeData[language]
-   || localeData.en;
+import { IntlProvider } from 'react-intl';
 
 /**
  * Production root application.
  */
-const Root = ({ store }) =>
+const Root = ({ store, language, i18nMessages }) =>
    (
-      <IntlProvider locale={language} messages={messages}>
+      <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
          <Provider store={store}>
             <Router>
                {routes}
@@ -40,7 +24,11 @@ const Root = ({ store }) =>
 
 Root.propTypes = {
    /** Application store */
-   store: PropTypes.object.isRequired
+   store: PropTypes.object.isRequired,
+   /** Application language */
+   language: PropTypes.string.isRequired,
+   /** Internationalization messages */
+   i18nMessages: PropTypes.object.isRequired
 };
 
 export default Root;

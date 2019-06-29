@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import BaseLayout from 'layout/containers/BaseLayout';
-import SearchView from 'search/containers/SearchView';
+import SearchView from 'views/containers/SearchView';
 
 /**
  * All the routes for the application.
