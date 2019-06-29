@@ -28,7 +28,7 @@ Root.propTypes = {
    /** Application language */
    language: PropTypes.string.isRequired,
    /** Internationalization messages */
-   i18nMessages: PropTypes.array.isRequired
+   i18nMessages: PropTypes.object.isRequired
 };
 
 export default Root;

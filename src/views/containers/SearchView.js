@@ -47,7 +47,7 @@ class SearchView extends Component {
 }
 
 SearchView.propTypes = {
-   loading: PropTypes.boolean,
+   loading: PropTypes.bool.isRequired,
    intl: intlShape.isRequired
 };
 
