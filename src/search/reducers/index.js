@@ -1,6 +1,6 @@
 import * as types from 'search/actions/types';
 
-const search = (state = { ids: [] }, action) => {
+const search = (state = { bookIds: [] }, action) => {
    const { type } = action;
    let { payload } = action;
 
@@ -12,12 +12,12 @@ const search = (state = { ids: [] }, action) => {
    case types.CLEAR_SEARCH_BOOK:
       return {
          ...state,
-         ids: []
+         bookIds: []
       };
    case types.SET_BOOK_IDS:
       return {
          ...state,
-         ids: payload
+         bookIds: payload
       };
    default:
       return state;

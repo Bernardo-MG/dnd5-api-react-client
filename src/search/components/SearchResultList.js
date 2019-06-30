@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import ResultList from 'common/containers/ResultList';
 
-import { selectBooks } from 'books/selectors';
+import { selectSearchedBooks as selectResult } from 'search/selectors';
 
 const SearchResultList = (props) =>
    <ResultList source={props.result} />;
@@ -17,7 +17,7 @@ SearchResultList.propTypes = {
 
 const mapStateToProps = (state) => {
    return {
-      result: selectBooks(state)
+      result: selectResult(state)
    };
 };
 
