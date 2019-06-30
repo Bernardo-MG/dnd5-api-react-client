@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import '@babel/polyfill';
 import '@babel/register';
 
 import Root from 'root/containers/Root';
