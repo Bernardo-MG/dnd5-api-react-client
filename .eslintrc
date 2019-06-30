@@ -95,7 +95,7 @@
       ],
       "implicit-arrow-linebreak":[
          "error",
-         "below"
+         "beside"
       ],
       "no-trailing-spaces":[
          "error",

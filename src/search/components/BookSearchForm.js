@@ -9,13 +9,12 @@ import ButtonInput from 'common/containers/ButtonInput';
 
 import { search } from 'search/actions/books';
 
-const BookSearchForm = (props) =>
-   <ButtonInput
-      id={props.id}
-      label={props.label}
-      buttonLabel={props.buttonLabel}
-      action={props.search}
-   />;
+const BookSearchForm = (props) => <ButtonInput
+   id={props.id}
+   label={props.label}
+   buttonLabel={props.buttonLabel}
+   action={props.search}
+/>;
 
 BookSearchForm.propTypes = {
    id: PropTypes.string.isRequired,

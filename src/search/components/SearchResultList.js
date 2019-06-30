@@ -8,8 +8,7 @@ import ResultList from 'common/containers/ResultList';
 
 import { selectSearchedBooks as selectResult } from 'search/selectors';
 
-const SearchResultList = (props) =>
-   <ResultList source={props.result} />;
+const SearchResultList = (props) => <ResultList source={props.result} />;
 
 SearchResultList.propTypes = {
    result: PropTypes.array.isRequired

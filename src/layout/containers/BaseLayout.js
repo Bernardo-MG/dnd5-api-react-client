@@ -15,19 +15,18 @@ import Typography from '@material-ui/core/Typography';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-const BaseLayout = ({ intl, children }) =>
-   <React.Fragment>
-      <AppBar position="relative">
-         <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>
-               { intl.formatMessage({ id: 'app.title' }) }
-            </Typography>
-         </Toolbar>
-      </AppBar>
-      <main>
-         {children}
-      </main>
-   </React.Fragment>;
+const BaseLayout = ({ intl, children }) => <React.Fragment>
+   <AppBar position="relative">
+      <Toolbar>
+         <Typography variant="h6" color="inherit" noWrap>
+            { intl.formatMessage({ id: 'app.title' }) }
+         </Typography>
+      </Toolbar>
+   </AppBar>
+   <main>
+      {children}
+   </main>
+</React.Fragment>;
 
 BaseLayout.propTypes = {
    /** Children elements, the view contents */

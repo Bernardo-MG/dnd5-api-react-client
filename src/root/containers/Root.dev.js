@@ -15,19 +15,18 @@ import DevTools from 'development/components/DevTools';
  * 
  * It will include the dev tools.
  */
-const Root = ({ store, language, i18nMessages }) =>
-   (
-      <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
-         <Provider store={store}>
-            <React.Fragment>
-               <Router>
-                  {routes}
-               </Router>
-               <DevTools />
-            </React.Fragment>
-         </Provider>
-      </IntlProvider>
-   );
+const Root = ({ store, language, i18nMessages }) => (
+   <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
+      <Provider store={store}>
+         <React.Fragment>
+            <Router>
+               {routes}
+            </Router>
+            <DevTools />
+         </React.Fragment>
+      </Provider>
+   </IntlProvider>
+);
 
 Root.propTypes = {
    /** Application store */

@@ -13,12 +13,10 @@ const filterByKeys = (map, keys) => {
    return result;
 };
 
-export const selectBookIds = (state) =>
-   state.search.bookIds;
+export const selectBookIds = (state) => state.search.bookIds;
 
 export const selectSearchedBooks = createSelector(
    selectBooks,
    selectBookIds,
-   (data, ids) =>
-      filterByKeys(data, ids)
+   (data, ids) => filterByKeys(data, ids)
 );

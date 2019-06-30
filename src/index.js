@@ -26,8 +26,7 @@ let language = (navigator.languages && navigator.languages[0])
 
 const loadedLocales = ['en'];
 
-if (!loadedLocales.some((locale) =>
-   language.startsWith(locale))) {
+if (!loadedLocales.some((locale) => language.startsWith(locale))) {
    language = 'en';
 }
 

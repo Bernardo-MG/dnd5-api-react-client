@@ -1,3 +1,2 @@
 
-export const selectBooks = (state) =>
-   state.book.books;
+export const selectBooks = (state) => state.book.books;
