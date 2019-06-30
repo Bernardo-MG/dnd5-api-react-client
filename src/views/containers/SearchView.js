@@ -8,7 +8,7 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import { selectSearchingBooks } from 'views/selectors';
 
-import BaseLayout from 'layout/containers/BaseLayout';
+import BaseLayout from 'views/containers/BaseLayout';
 
 import BookSearchForm from 'search/components/BookSearchForm';
 import SearchResultList from 'search/components/SearchResultList';
