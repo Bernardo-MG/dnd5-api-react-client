@@ -20,3 +20,10 @@ export const failure = (payload) => {
       payload
    };
 };
+
+export const setIds = (payload) => {
+   return {
+      type: types.SET_BOOK_IDS,
+      payload
+   };
+};

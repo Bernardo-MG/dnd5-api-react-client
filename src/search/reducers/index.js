@@ -14,7 +14,7 @@ const search = (state = { ids: [] }, action) => {
          ...state,
          ids: []
       };
-   case types.SEARCH_BOOK_SUCCESS:
+   case types.SET_BOOK_IDS:
       return {
          ...state,
          ids: payload

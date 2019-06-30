@@ -1,6 +1,6 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 import { SEARCH_BOOK, SEARCH_BOOK_SUCCESS } from 'search/actions/types';
-import { success, failure } from 'search/actions/books';
+import { success, failure, setIds as setBookIds } from 'search/actions/books';
 import { searchApi } from 'api';
 import { addBooks } from 'books/actions';
 import { normalize } from 'normalizr';
@@ -23,6 +23,7 @@ export function* search(action) {
 export function* saveBooks(action) {
    const normalized = normalize(action.payload.docs, [book]);
    yield put(addBooks(normalized.entities.books));
+   yield put(setBookIds(normalized.result));
 }
 
 export const searchSagas = [
