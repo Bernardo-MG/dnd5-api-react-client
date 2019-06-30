@@ -30,11 +30,7 @@ const enhancer = compose(
    DevTools.instrument()
 );
 
-const configureStore = () =>
-   createStore(
-      rootReducer,
-      enhancer
-   );
+const configureStore = () => createStore(rootReducer, enhancer);
 
 export default () => {
    const store = configureStore();

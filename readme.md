@@ -1,6 +1,6 @@
 # React REST Client Example
 
-An example REST client made with React and Redux
+An example REST client made with React and Redux, which queries the [Open Library][open-library].
 
 ## Features
 
@@ -81,6 +81,8 @@ The project has been released under the [MIT License][license].
 [license]: http://www.opensource.org/licenses/mit-license.php
 [npm]: https://www.npmjs.com/
 [scm]: https://github.com/Bernardo-MG/react-rest-client-example
+
+[open-library]: https://openlibrary.org
 
 [demo-site]: https://docs.bernardomg.com/react-rest-client-example
 [demo-site-development]: https://docs.bernardomg.com/development/react-rest-client-example

@@ -3,7 +3,7 @@ import { search } from 'search/sagas';
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
 import { searchApi } from 'api';
-import { success } from 'search/actions';
+import { success } from 'search/actions/books';
 
 const generator = cloneableGenerator(search)({ payload: 'abc' }, 0);
 const generatorEmpty = cloneableGenerator(search)({}, 0);

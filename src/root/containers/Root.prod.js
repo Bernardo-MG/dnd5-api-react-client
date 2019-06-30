@@ -11,16 +11,15 @@ import { IntlProvider } from 'react-intl';
 /**
  * Production root application.
  */
-const Root = ({ store, language, i18nMessages }) =>
-   (
-      <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
-         <Provider store={store}>
-            <Router>
-               {routes}
-            </Router>
-         </Provider>
-      </IntlProvider>
-   );
+const Root = ({ store, language, i18nMessages }) => (
+   <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
+      <Provider store={store}>
+         <Router>
+            {routes}
+         </Router>
+      </Provider>
+   </IntlProvider>
+);
 
 Root.propTypes = {
    /** Application store */

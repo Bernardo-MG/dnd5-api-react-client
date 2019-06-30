@@ -1,7 +1,10 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
-import { SEARCH, SEARCH_SUCCESS } from 'search/actions/types';
-import { success, failure, setTotal, setPage } from 'search/actions';
+import { SEARCH_BOOK, SEARCH_BOOK_SUCCESS } from 'search/actions/types';
+import { success, failure, setIds as setBookIds } from 'search/actions/books';
 import { searchApi } from 'api';
+import { addBooks } from 'books/actions';
+import { normalize } from 'normalizr';
+import { book } from 'books/schema';
 
 export function* search(action) {
    if (action.payload) {
@@ -17,12 +20,13 @@ export function* search(action) {
    }
 }
 
-export function* updatePage(action) {
-   yield put(setTotal(action.payload.numFound));
-   yield put(setPage());
+export function* saveBooks(action) {
+   const normalized = normalize(action.payload.docs, [book]);
+   yield put(addBooks(normalized.entities.books));
+   yield put(setBookIds(normalized.result));
 }
 
 export const searchSagas = [
-   takeLatest(SEARCH, search),
-   takeLatest(SEARCH_SUCCESS, updatePage)
+   takeLatest(SEARCH_BOOK, search),
+   takeLatest(SEARCH_BOOK_SUCCESS, saveBooks)
 ];

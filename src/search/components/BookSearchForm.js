@@ -7,17 +7,16 @@ import { bindActionCreators } from 'redux';
 
 import ButtonInput from 'common/containers/ButtonInput';
 
-import { searchComic } from 'search/actions';
+import { search } from 'search/actions/books';
 
-const ComicSearchForm = (props) =>
-   <ButtonInput
-      id={props.id}
-      label={props.label}
-      buttonLabel={props.buttonLabel}
-      action={props.search}
-   />;
+const BookSearchForm = (props) => <ButtonInput
+   id={props.id}
+   label={props.label}
+   buttonLabel={props.buttonLabel}
+   action={props.search}
+/>;
 
-ComicSearchForm.propTypes = {
+BookSearchForm.propTypes = {
    id: PropTypes.string.isRequired,
    label: PropTypes.string.isRequired,
    buttonLabel: PropTypes.string.isRequired,
@@ -31,11 +30,11 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      search: bindActionCreators(searchComic, dispatch)
+      search: bindActionCreators(search, dispatch)
    };
 };
 
 export default connect(
    mapStateToProps,
    mapDispatchToProps
-)(ComicSearchForm);
+)(BookSearchForm);

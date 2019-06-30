@@ -11,12 +11,11 @@ const middleware = [
 
 const enhancer = applyMiddleware(...middleware);
 
-const configureStore = (initialState) =>
-   createStore(
-      rootReducer,
-      initialState,
-      enhancer
-   );
+const configureStore = (initialState) => createStore(
+   rootReducer,
+   initialState,
+   enhancer
+);
 
 export default () => {
    const store = configureStore();

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import '@babel/polyfill';
 import '@babel/register';
 
 import Root from 'root/containers/Root';
@@ -26,8 +25,7 @@ let language = (navigator.languages && navigator.languages[0])
 
 const loadedLocales = ['en'];
 
-if (!loadedLocales.some((locale) =>
-   language.startsWith(locale))) {
+if (!loadedLocales.some((locale) => language.startsWith(locale))) {
    language = 'en';
 }
 

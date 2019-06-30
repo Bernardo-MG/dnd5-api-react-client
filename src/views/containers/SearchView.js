@@ -10,7 +10,7 @@ import { selectSearchingBooks } from 'views/selectors';
 
 import BaseLayout from 'layout/containers/BaseLayout';
 
-import ComicSearchForm from 'search/components/ComicSearchForm';
+import BookSearchForm from 'search/components/BookSearchForm';
 import SearchResultList from 'search/components/SearchResultList';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -32,7 +32,7 @@ class SearchView extends Component {
          <BaseLayout>
             <Grid container direction='column'>
                <Grid container justify='center'>
-                  <ComicSearchForm
+                  <BookSearchForm
                      id='title'
                      label={ this.props.intl.formatMessage({ id: 'form.title' }) }
                      buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
