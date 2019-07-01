@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import BaseLayout from 'layout/containers/BaseLayout';
 import SearchView from 'views/containers/SearchView';
 
 /**
@@ -12,6 +11,6 @@ import SearchView from 'views/containers/SearchView';
  * - Class name to mark links as active
  * - Component to show
  */
-export default <Switch component={BaseLayout}>
+export default <Switch>
    <Route path='/' exact component={SearchView}/>
 </Switch>;

@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 const ResultList = (props) => <List>
    { props.source.map(
-      (item, i) => <ListItem key={i}>
+      (item, i) => <ListItem button key={i}>
          <ListItemText primary={item} />
       </ListItem>
    )}

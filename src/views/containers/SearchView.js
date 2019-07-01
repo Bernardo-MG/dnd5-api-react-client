@@ -8,13 +8,14 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import { selectSearchingBooks } from 'views/selectors';
 
-import BaseLayout from 'layout/containers/BaseLayout';
+import BaseLayout from 'views/containers/BaseLayout';
 
 import BookSearchForm from 'search/components/BookSearchForm';
 import SearchResultList from 'search/components/SearchResultList';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 class SearchView extends Component {
 
@@ -23,23 +24,25 @@ class SearchView extends Component {
 
       if (this.props.loading) {
          console.log('loading');
-         view = <Grid container justify='center'> <CircularProgress /> </Grid>;
+         view = <Grid container> <CircularProgress /> </Grid>;
       } else {
-         view = <Grid container justify='center'> <SearchResultList /> </Grid>;
+         view = <Grid style={ { maxHeight: '75vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
       }
 
       return (
          <BaseLayout>
-            <Grid container direction='column'>
-               <Grid container justify='center'>
-                  <BookSearchForm
-                     id='title'
-                     label={ this.props.intl.formatMessage({ id: 'form.title' }) }
-                     buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
-                  />
+            <Paper>
+               <Grid container direction='column'>
+                  <Grid container justify='center'>
+                     <BookSearchForm
+                        id='title'
+                        label={ this.props.intl.formatMessage({ id: 'form.title' }) }
+                        buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
+                     />
+                  </Grid>
+                  { view }
                </Grid>
-               { view }
-            </Grid>
+            </Paper>
          </BaseLayout>
       );
    }
