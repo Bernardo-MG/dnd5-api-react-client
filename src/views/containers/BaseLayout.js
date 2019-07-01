@@ -7,6 +7,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 
 import AppBar from '@material-ui/core/AppBar';
+import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -26,7 +27,9 @@ const BaseLayout = ({ intl, children }) => <React.Fragment>
    </AppBar>
    <main>
       <Container>
-         {children}
+         <Box pt={2}>
+            {children}
+         </Box>
       </Container>
    </main>
 </React.Fragment>;
