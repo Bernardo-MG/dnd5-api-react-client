@@ -1,14 +1,7 @@
 import * as types from 'search/actions/types';
 
 const views = (state = { searchingBooks: false }, action) => {
-   const { type } = action;
-   let { payload } = action;
-
-   if (payload === undefined) {
-      payload = [];
-   }
-
-   switch (type) {
+   switch (action.type) {
    case types.SEARCH_BOOK:
       return {
          ...state,
