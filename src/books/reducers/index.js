@@ -2,11 +2,6 @@ import * as types from 'books/actions/types';
 
 const books = (state = { books: {} }, action) => {
    switch (action.type) {
-   case types.CLEAR_BOOKS:
-      return {
-         ...state,
-         books: {}
-      };
    case types.ADD_BOOKS:
       return {
          ...state,
