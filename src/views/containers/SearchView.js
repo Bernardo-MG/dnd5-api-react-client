@@ -24,7 +24,7 @@ class SearchView extends Component {
 
       if (this.props.loading) {
          console.log('loading');
-         view = <Grid container> <CircularProgress /> </Grid>;
+         view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
       } else {
          view = <Grid style={ { maxHeight: '75vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
       }
