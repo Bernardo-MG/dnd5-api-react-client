@@ -26,12 +26,12 @@ class SearchView extends Component {
          console.log('loading');
          view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
       } else {
-         view = <Grid style={ { maxHeight: '75vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
+         view = <Grid style={ { height: '80vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
       }
 
       return (
          <BaseLayout>
-            <Paper>
+            <Paper style={ { height: '85vh', overflow: 'auto' } }>
                <Grid container direction='column'>
                   <Grid container justify='center'>
                      <BookSearchForm
