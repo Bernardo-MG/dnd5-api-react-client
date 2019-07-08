@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import { injectIntl, intlShape } from 'react-intl';
 
-import { selectSearchingBooks } from 'views/selectors';
+import { selectSearchingBooks } from 'search/selectors';
 
 import BaseLayout from 'views/containers/BaseLayout';
 
