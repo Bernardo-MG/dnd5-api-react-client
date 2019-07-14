@@ -46,13 +46,14 @@ module.exports = {
    },
    cache : true,
    optimization: {
+      // Generates vendor and app bundles
       splitChunks: {
          cacheGroups: {
             commons: {
                chunks: 'initial',
                minChunks: 2,
-               maxInitialRequests: 5, // The default limit is too small to showcase the effect
-               minSize: 0 // This is example is too small to create commons chunks
+               maxInitialRequests: 5,
+               minSize: 0
             },
             vendor: {
                test: /node_modules/,
