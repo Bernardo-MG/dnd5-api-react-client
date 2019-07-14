@@ -15,7 +15,8 @@ const PROJECT_REPO_URL = process.env.REPO_URL;
 const INPUT_PATH = process.env.INPUT_PATH;
 const INPUT_PATH_ENTRY = INPUT_PATH + 'index.js';
 
-const OUTPUT_PATH = process.env.OUTPUT_PATH;
+// Output directory
+const OUTPUT_PATH = process.env.OUTPUT_PATH || './build/';
 
 // Modules dependencies directory
 const MODULE_PATH = process.env.MODULE_PATH;
@@ -37,7 +38,11 @@ let plugins = [
 module.exports = {
    context : __dirname,
    entry: {
-      app: INPUT_PATH_ENTRY,
+      app: INPUT_PATH_ENTRY
+   },
+   output: {
+      path: path.join(__dirname, OUTPUT_PATH),
+      filename: "[name].js"
    },
    cache : true,
    optimization: {
@@ -58,10 +63,6 @@ module.exports = {
             }
          }
       }
-   },
-   output: {
-      path: path.join(__dirname, OUTPUT_PATH),
-      filename: "[name].js"
    },
    resolve : {
       extensions : [ '.scss', '.css', '.js', '.json' ],
