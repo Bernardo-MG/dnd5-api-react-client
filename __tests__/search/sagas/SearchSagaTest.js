@@ -2,7 +2,7 @@ import '@babel/polyfill';
 import { search } from 'search/sagas';
 import { call, put } from 'redux-saga/effects';
 import { cloneableGenerator } from '@redux-saga/testing-utils';
-import { searchApi } from 'api';
+import api from 'api';
 import { success } from 'search/actions/books';
 
 const generator = cloneableGenerator(search)({ payload: 'abc' }, 0);
@@ -14,7 +14,7 @@ describe('Search requests saga', () => {
       expect(
          gen.next().value
          ).toEqual(
-            call(searchApi.search, 'abc')
+            call(api.Books.byTitle, 'abc')
       )
    }),
 

@@ -10,18 +10,6 @@ describe('Books reducer', () => {
       )
    }),
 
-   it('clears values', () => {
-      expect(
-            books({ books: {'a': {}, 'b': {}} }, {
-            type: types.CLEAR_BOOKS
-         })
-      ).toEqual(
-         {
-            books: {}
-         }
-      )
-   }),
-
    it('sets values', () => {
       expect(
             books({ books: {} }, {
