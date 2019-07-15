@@ -1,5 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import SideMenuLayoutRoute from 'routes/SideMenuLayoutRoute';
 
 import Index from 'views/containers/Index';
 import SearchView from 'views/containers/SearchView';
@@ -9,10 +11,9 @@ import SearchView from 'views/containers/SearchView';
  * 
  * These are composed of three parts:
  * - Path
- * - Class name to mark links as active
  * - Component to show
  */
 export default <Switch>
-   <Route path='/' exact component={Index}/>
-   <Route path='/search' exact component={SearchView}/>
+   <SideMenuLayoutRoute path='/' exact component={Index}/>
+   <SideMenuLayoutRoute path='/search' exact component={SearchView}/>
 </Switch>;

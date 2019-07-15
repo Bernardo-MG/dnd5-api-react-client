@@ -8,8 +8,6 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import { selectSearchingBooks } from 'search/selectors';
 
-import BaseLayout from 'views/containers/BaseLayout';
-
 import BookSearchForm from 'search/components/BookSearchForm';
 import SearchResultList from 'search/components/SearchResultList';
 
@@ -30,20 +28,18 @@ class SearchView extends Component {
       }
 
       return (
-         <BaseLayout>
-            <Paper style={ { height: '85vh', overflow: 'auto' } }>
-               <Grid container direction='column'>
-                  <Grid container justify='center'>
-                     <BookSearchForm
-                        id='title'
-                        label={ this.props.intl.formatMessage({ id: 'form.title' }) }
-                        buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
-                     />
-                  </Grid>
-                  { view }
+         <Paper style={ { height: '85vh', overflow: 'auto' } }>
+            <Grid container direction='column'>
+               <Grid container justify='center'>
+                  <BookSearchForm
+                     id='title'
+                     label={ this.props.intl.formatMessage({ id: 'form.title' }) }
+                     buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
+                  />
                </Grid>
-            </Paper>
-         </BaseLayout>
+               { view }
+            </Grid>
+         </Paper>
       );
    }
 
