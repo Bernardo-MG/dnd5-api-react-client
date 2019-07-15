@@ -8,8 +8,8 @@ import { injectIntl, intlShape } from 'react-intl';
 
 import { selectSearchingBooks } from 'search/selectors';
 
-import BookSearchForm from 'search/components/BookSearchForm';
-import SearchResultList from 'search/components/SearchResultList';
+import BookSearchForm from 'search/containers/BookSearchForm';
+import SearchResultList from 'search/containers/SearchResultList';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
