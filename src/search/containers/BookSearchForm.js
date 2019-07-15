@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import ButtonInput from 'common/containers/ButtonInput';
+import ButtonInput from 'common/components/ButtonInput';
 
 import { search } from 'search/actions/books';
 
