@@ -28,7 +28,7 @@ import MenuIcon from '@material-ui/icons/Menu';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-function BaseLayout({ intl, children }) {
+function SideMenuLayout({ intl, children }) {
 
    const [open, setOpen] = React.useState(false);
 
@@ -77,7 +77,7 @@ function BaseLayout({ intl, children }) {
    </React.Fragment>;
 }
 
-BaseLayout.propTypes = {
+SideMenuLayout.propTypes = {
    /** Children elements, the view contents */
    children: PropTypes.oneOfType([
       PropTypes.array,
@@ -97,4 +97,4 @@ const mapDispatchToProps = () => {
 export default injectIntl(connect(
    mapStateToProps,
    mapDispatchToProps
-)(BaseLayout));
+)(SideMenuLayout));
