@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import Index from 'views/containers/Index';
 import SearchView from 'views/containers/SearchView';
 
 /**
@@ -12,5 +13,6 @@ import SearchView from 'views/containers/SearchView';
  * - Component to show
  */
 export default <Switch>
-   <Route path='/' exact component={SearchView}/>
+   <Route path='/' exact component={Index}/>
+   <Route path='/search' exact component={SearchView}/>
 </Switch>;
