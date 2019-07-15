@@ -20,3 +20,5 @@ export const selectSearchedBooks = createSelector(
    selectBookIds,
    (data, ids) => filterByKeys(data, ids)
 );
+
+export const selectSearchingBooks = (state) => state.search.searchingBooks;

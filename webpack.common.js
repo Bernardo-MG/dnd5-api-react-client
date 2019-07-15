@@ -15,7 +15,8 @@ const PROJECT_REPO_URL = process.env.REPO_URL;
 const INPUT_PATH = process.env.INPUT_PATH;
 const INPUT_PATH_ENTRY = INPUT_PATH + 'index.js';
 
-const OUTPUT_PATH = process.env.OUTPUT_PATH;
+// Output directory
+const OUTPUT_PATH = process.env.OUTPUT_PATH || './build/';
 
 // Modules dependencies directory
 const MODULE_PATH = process.env.MODULE_PATH;
@@ -37,31 +38,32 @@ let plugins = [
 module.exports = {
    context : __dirname,
    entry: {
-      app: INPUT_PATH_ENTRY,
+      app: INPUT_PATH_ENTRY
+   },
+   output: {
+      path: path.join(__dirname, OUTPUT_PATH),
+      filename: '[name].js'
    },
    cache : true,
    optimization: {
+      // Generates vendor and app bundles
       splitChunks: {
          cacheGroups: {
             commons: {
-               chunks: "initial",
+               chunks: 'initial',
                minChunks: 2,
-               maxInitialRequests: 5, // The default limit is too small to showcase the effect
-               minSize: 0 // This is example is too small to create commons chunks
+               maxInitialRequests: 5,
+               minSize: 0
             },
             vendor: {
                test: /node_modules/,
-               chunks: "initial",
-               name: "vendor",
+               chunks: 'initial',
+               name: 'vendor',
                priority: 10,
                enforce: true
             }
          }
       }
-   },
-   output: {
-      path: path.join(__dirname, OUTPUT_PATH),
-      filename: "[name].js"
    },
    resolve : {
       extensions : [ '.scss', '.css', '.js', '.json' ],

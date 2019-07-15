@@ -1,5 +1,7 @@
 {
-   "app.title": "Application Title",
+   "app.title": "React REST Client Example",
+   "link.index": "Index",
+   "link.search": "Search",
    "form.search": "Search",
    "form.title": "Title"
 }

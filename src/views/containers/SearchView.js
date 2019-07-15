@@ -6,9 +6,7 @@ import { connect } from 'react-redux';
 
 import { injectIntl, intlShape } from 'react-intl';
 
-import { selectSearchingBooks } from 'views/selectors';
-
-import BaseLayout from 'views/containers/BaseLayout';
+import { selectSearchingBooks } from 'search/selectors';
 
 import BookSearchForm from 'search/components/BookSearchForm';
 import SearchResultList from 'search/components/SearchResultList';
@@ -24,26 +22,24 @@ class SearchView extends Component {
 
       if (this.props.loading) {
          console.log('loading');
-         view = <Grid container> <CircularProgress /> </Grid>;
+         view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
       } else {
-         view = <Grid style={ { maxHeight: '75vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
+         view = <Grid style={ { height: '80vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
       }
 
       return (
-         <BaseLayout>
-            <Paper>
-               <Grid container direction='column'>
-                  <Grid container justify='center'>
-                     <BookSearchForm
-                        id='title'
-                        label={ this.props.intl.formatMessage({ id: 'form.title' }) }
-                        buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
-                     />
-                  </Grid>
-                  { view }
+         <Paper style={ { height: '85vh', overflow: 'auto' } }>
+            <Grid container direction='column'>
+               <Grid container justify='center'>
+                  <BookSearchForm
+                     id='title'
+                     label={ this.props.intl.formatMessage({ id: 'form.title' }) }
+                     buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
+                  />
                </Grid>
-            </Paper>
-         </BaseLayout>
+               { view }
+            </Grid>
+         </Paper>
       );
    }
 

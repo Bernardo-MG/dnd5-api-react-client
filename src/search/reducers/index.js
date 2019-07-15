@@ -1,23 +1,22 @@
 import * as types from 'search/actions/types';
 
-const search = (state = { bookIds: [] }, action) => {
-   const { type } = action;
-   let { payload } = action;
-
-   if (payload === undefined) {
-      payload = [];
-   }
-
-   switch (type) {
-   case types.CLEAR_SEARCH_BOOK:
+const search = (state = { bookIds: [], searchingBooks: false }, action) => {
+   switch (action.type) {
+   case types.SEARCH_BOOK:
       return {
          ...state,
-         bookIds: []
+         searchingBooks: true
+      };
+   case types.SEARCH_BOOK_SUCCESS:
+   case types.SEARCH_BOOK_FAILURE:
+      return {
+         ...state,
+         searchingBooks: false
       };
    case types.SET_BOOK_IDS:
       return {
          ...state,
-         bookIds: payload
+         bookIds: action.payload
       };
    default:
       return state;
