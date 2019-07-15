@@ -13,7 +13,7 @@ const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...re
 )} />;
 
 SideMenuLayoutRoute.propTypes = {
-   component: PropTypes.element.isRequired
+   component: PropTypes.object.isRequired
 };
 
 export default SideMenuLayoutRoute;
