@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -6,59 +6,44 @@ import Button from '@material-ui/core/Button';
 
 import TextField from '@material-ui/core/TextField';
 
-class ButtonInput extends Component {
+function ButtonInput({ action, id, label, buttonLabel }) {
 
-   state = { query: '' };
+   const [query, setQuery] = React.useState('');
 
    /**
     * Handles the value change event.
     *
     * @param event value change event
     */
-   _handleChange = (event) => {
-      this.setState({ query: event.target.value });
-   };
+   function handleChange(event) {
+      setQuery(event.target.value);
+   }
 
    /**
     * Handles the button click event.
     */
-   _handleClick = (event) => {
+   function handleClick(event) {
       if ((event) && (event.type === 'click')) {
-         if (this.state.query) {
-            this.props.action(this.state.query);
+         if (query) {
+            action(query);
          }
       }
-   };
-
-   /**
-    * Handles the key event.
-    *
-    * @param event key press event
-    */
-   _handleKeyPress = (event) => {
-      if ((event) && (event.key === 'Enter')) {
-         if (this.state.query) {
-            this.props.action(this.state.query);
-         }
-      }
-   };
-
-   render() {
-      return (
-         <form noValidate autoComplete="off">
-            <TextField
-               id={this.props.id}
-               label={this.props.label}
-               value={this.state.query}
-               onChange={::this._handleChange}
-               onKeyPress={::this._handleKeyPress}
-            />
-            <Button variant='contained' onClick={::this._handleClick}>
-               {this.props.buttonLabel}
-            </Button>
-         </form>
-      );
    }
+
+   return (
+      <form noValidate autoComplete="off">
+         <TextField
+            id={id}
+            label={label}
+            value={query}
+            onChange={handleChange}
+            onKeyPress={handleChange}
+         />
+         <Button variant='contained' onClick={handleClick}>
+            {buttonLabel}
+         </Button>
+      </form>
+   );
 
 }
 
