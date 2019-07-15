@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Route } from 'react-router-dom';
 
-import SideMenuLayout from 'views/containers/SideMenuLayout';
+import SideMenuLayout from 'views/components/SideMenuLayout';
 
 const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...rest} render={(props) => (
    <SideMenuLayout>

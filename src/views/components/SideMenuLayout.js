@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import { injectIntl, intlShape } from 'react-intl';
 
-import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -59,10 +57,10 @@ function SideMenuLayout({ intl, children }) {
          </div>
          <Divider />
          <List>
-            <ListItem button key={'text'}>
+            <ListItem button key={'index'}>
                <Link to="/"><ListItemText primary={ intl.formatMessage({ id: 'link.index' }) } /></Link>
             </ListItem>
-            <ListItem button key={'text'}>
+            <ListItem button key={'search'}>
                <Link to="/search"><ListItemText primary={ intl.formatMessage({ id: 'link.search' }) } /></Link>
             </ListItem>
          </List>
@@ -86,15 +84,4 @@ SideMenuLayout.propTypes = {
    intl: intlShape.isRequired
 };
 
-const mapStateToProps = () => {
-   return {};
-};
-
-const mapDispatchToProps = () => {
-   return {};
-};
-
-export default injectIntl(connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(SideMenuLayout));
+export default injectIntl(SideMenuLayout);
