@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -15,33 +15,29 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-class SearchView extends Component {
+function SearchView({ intl, loading }) {
+   let view = null;
 
-   render() {
-      let view = null;
-
-      if (this.props.loading) {
-         console.log('loading');
-         view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
-      } else {
-         view = <Grid style={ { height: '80vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
-      }
-
-      return (
-         <Paper style={ { height: '85vh', overflow: 'auto' } }>
-            <Grid container direction='column'>
-               <Grid container justify='center'>
-                  <BookSearchForm
-                     id='title'
-                     label={ this.props.intl.formatMessage({ id: 'form.title' }) }
-                     buttonLabel={ this.props.intl.formatMessage({ id: 'form.search' }) }
-                  />
-               </Grid>
-               { view }
-            </Grid>
-         </Paper>
-      );
+   if (loading) {
+      view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
+   } else {
+      view = <Grid style={ { height: '80vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
    }
+
+   return (
+      <Paper style={ { height: '85vh', overflow: 'auto' } }>
+         <Grid container direction='column'>
+            <Grid container justify='center'>
+               <BookSearchForm
+                  id='title'
+                  label={ intl.formatMessage({ id: 'form.title' }) }
+                  buttonLabel={ intl.formatMessage({ id: 'form.search' }) }
+               />
+            </Grid>
+            { view }
+         </Grid>
+      </Paper>
+   );
 
 }
 
