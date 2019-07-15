@@ -18,7 +18,7 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      search: bindActionCreators(search, dispatch)
+      action: bindActionCreators(search, dispatch)
    };
 };
 
