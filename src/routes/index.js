@@ -3,8 +3,7 @@ import { Switch } from 'react-router-dom';
 
 import SideMenuLayoutRoute from 'routes/SideMenuLayoutRoute';
 
-import Index from 'views/components/Index';
-import SearchView from 'views/containers/SearchView';
+import { Index, SearchView } from 'views';
 
 /**
  * All the routes for the application.
