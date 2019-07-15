@@ -16,6 +16,7 @@ import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
@@ -59,10 +60,10 @@ function BaseLayout({ intl, children }) {
          <Divider />
          <List>
             <ListItem button key={'text'}>
-               <Link to="/">index</Link>
+               <Link to="/"><ListItemText primary={ intl.formatMessage({ id: 'link.index' }) } /></Link>
             </ListItem>
             <ListItem button key={'text'}>
-               <Link to="/search">search</Link>
+               <Link to="/search"><ListItemText primary={ intl.formatMessage({ id: 'link.search' }) } /></Link>
             </ListItem>
          </List>
       </Drawer>

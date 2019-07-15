@@ -1,5 +1,7 @@
 {
    "app.title": "Application Title",
+   "link.index": "Index",
+   "link.search": "Search",
    "form.search": "Search",
    "form.title": "Title"
 }
