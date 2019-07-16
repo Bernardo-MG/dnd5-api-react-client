@@ -4,27 +4,16 @@ import PropTypes from 'prop-types';
 
 import { Route } from 'react-router-dom';
 
-import { SideMenuLayout } from 'views';
+import { DefaultSideMenuLayout } from 'views';
 
-import sideLinks from 'config/links';
-
-import { title } from 'config/app';
-
-const SideMenuLayoutRoute = ({ component: Component, links, ...rest }) => <Route {...rest} render={(props) => (
-   <SideMenuLayout links={ sideLinks } title={ title }>
+const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...rest} render={(props) => (
+   <DefaultSideMenuLayout>
       <Component {...props} />
-   </SideMenuLayout>
+   </DefaultSideMenuLayout>
 )} />;
 
 SideMenuLayoutRoute.propTypes = {
-   component: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
-   links: PropTypes.arrayOf(
-      PropTypes.shape({
-         text: PropTypes.string,
-         link: PropTypes.string,
-         id: PropTypes.string
-      })
-   )
+   component: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired
 };
 
 export default SideMenuLayoutRoute;
