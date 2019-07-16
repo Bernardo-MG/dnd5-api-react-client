@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
 
-import ButtonInput from 'common/containers/ButtonInput';
+import ButtonInput from 'common/components/ButtonInput';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';

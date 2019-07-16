@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer';
 
-import ButtonInput from 'common/containers/ButtonInput';
+import ButtonInput from 'common/components/ButtonInput';
 
 describe('<ButtonInput />', () => {
    it('renders correctly', () => {

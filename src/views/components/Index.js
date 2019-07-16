@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
 import Typography from '@material-ui/core/Typography';
 
 function Index() {
@@ -12,13 +10,4 @@ function Index() {
 
 Index.propTypes = {};
 
-const mapStateToProps = () => {};
-
-const mapDispatchToProps = () => {
-   return {};
-};
-
-export default connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(Index);
+export default Index;

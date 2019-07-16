@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 
 import { Route } from 'react-router-dom';
 
-import BaseLayout from 'views/containers/BaseLayout';
+import { SideMenuLayout } from 'views';
 
 const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...rest} render={(props) => (
-   <BaseLayout>
+   <SideMenuLayout>
       <Component {...props} />
-   </BaseLayout>
+   </SideMenuLayout>
 )} />;
 
 SideMenuLayoutRoute.propTypes = {
-   component: PropTypes.element.isRequired
+   component: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired
 };
 
 export default SideMenuLayoutRoute;

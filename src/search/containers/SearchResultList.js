@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import ResultList from 'common/containers/ResultList';
+import ResultList from 'common/components/ResultList';
 
 import { selectSearchedBooks as selectResult } from 'search/selectors';
 
-const SearchResultList = (props) => <ResultList source={props.result} />;
+function SearchResultList({ result }) { return <ResultList source={result} />; }
 
 SearchResultList.propTypes = {
    result: PropTypes.array.isRequired

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 import { injectIntl, intlShape } from 'react-intl';
 
-import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -28,7 +26,7 @@ import MenuIcon from '@material-ui/icons/Menu';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-function BaseLayout({ intl, children }) {
+function SideMenuLayout({ intl, children }) {
 
    const [open, setOpen] = React.useState(false);
 
@@ -59,10 +57,10 @@ function BaseLayout({ intl, children }) {
          </div>
          <Divider />
          <List>
-            <ListItem button key={'text'}>
+            <ListItem button key={'index'}>
                <Link to="/"><ListItemText primary={ intl.formatMessage({ id: 'link.index' }) } /></Link>
             </ListItem>
-            <ListItem button key={'text'}>
+            <ListItem button key={'search'}>
                <Link to="/search"><ListItemText primary={ intl.formatMessage({ id: 'link.search' }) } /></Link>
             </ListItem>
          </List>
@@ -77,7 +75,7 @@ function BaseLayout({ intl, children }) {
    </React.Fragment>;
 }
 
-BaseLayout.propTypes = {
+SideMenuLayout.propTypes = {
    /** Children elements, the view contents */
    children: PropTypes.oneOfType([
       PropTypes.array,
@@ -86,15 +84,4 @@ BaseLayout.propTypes = {
    intl: intlShape.isRequired
 };
 
-const mapStateToProps = () => {
-   return {};
-};
-
-const mapDispatchToProps = () => {
-   return {};
-};
-
-export default injectIntl(connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(BaseLayout));
+export default injectIntl(SideMenuLayout);
