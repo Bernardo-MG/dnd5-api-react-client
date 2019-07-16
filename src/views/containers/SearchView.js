@@ -19,7 +19,7 @@ function SearchView({ intl, loading }) {
    let view = null;
 
    if (loading) {
-      view = <Grid container justify='center' alignItems='center'> <CircularProgress /> </Grid>;
+      view = <Grid container justify='center' alignItems='center' style={ { height: '70vh', overflow: 'auto' } }> <CircularProgress /> </Grid>;
    } else {
       view = <Grid style={ { height: '80vh', overflow: 'auto' } }> <SearchResultList /> </Grid>;
    }
