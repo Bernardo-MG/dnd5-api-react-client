@@ -1,12 +1,12 @@
 
 const sideLinks = [
    {
-      text: { id: 'link.index' },
+      text: 'Index',
       link: '/',
       id: 'index'
    },
    {
-      text: { id: 'link.search' },
+      text: 'Search',
       link: '/search',
       id: 'search'
    }

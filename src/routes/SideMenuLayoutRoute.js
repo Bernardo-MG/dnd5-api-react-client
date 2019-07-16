@@ -6,10 +6,12 @@ import { Route } from 'react-router-dom';
 
 import { SideMenuLayout } from 'views';
 
-import sideLinks from 'menu/links';
+import sideLinks from 'config/links';
+
+import { title } from 'config/app';
 
 const SideMenuLayoutRoute = ({ component: Component, links, ...rest }) => <Route {...rest} render={(props) => (
-   <SideMenuLayout links={ sideLinks }>
+   <SideMenuLayout links={ sideLinks } title={ title }>
       <Component {...props} />
    </SideMenuLayout>
 )} />;

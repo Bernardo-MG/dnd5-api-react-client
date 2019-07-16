@@ -2,8 +2,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { injectIntl, intlShape } from 'react-intl';
-
 import { Link } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -26,7 +24,7 @@ import MenuIcon from '@material-ui/icons/Menu';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-function SideMenuLayout({ intl, children, links }) {
+function SideMenuLayout({ children, links, title }) {
 
    const [open, setOpen] = React.useState(false);
 
@@ -39,7 +37,7 @@ function SideMenuLayout({ intl, children, links }) {
    }
 
    const linkItems = links.map((link) => <ListItem button key={link.id} >
-      <Link to={link.link}><ListItemText primary={ intl.formatMessage(link.text) } /></Link>
+      <Link to={link.link}><ListItemText primary={ link.text } /></Link>
    </ListItem>);
 
    return <React.Fragment>
@@ -49,7 +47,7 @@ function SideMenuLayout({ intl, children, links }) {
                <MenuIcon />
             </IconButton>
             <Typography variant='h6' color='inherit' noWrap>
-               { intl.formatMessage({ id: 'app.title' }) }
+               { title }
             </Typography>
          </Toolbar>
       </AppBar>
@@ -87,7 +85,7 @@ SideMenuLayout.propTypes = {
          id: PropTypes.string
       })
    ),
-   intl: intlShape.isRequired
+   title: PropTypes.string
 };
 
-export default injectIntl(SideMenuLayout);
+export default SideMenuLayout;
