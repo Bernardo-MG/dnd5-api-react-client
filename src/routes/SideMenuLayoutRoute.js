@@ -6,14 +6,23 @@ import { Route } from 'react-router-dom';
 
 import { SideMenuLayout } from 'views';
 
-const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...rest} render={(props) => (
-   <SideMenuLayout>
+import sideLinks from 'menu/links';
+
+const SideMenuLayoutRoute = ({ component: Component, links, ...rest }) => <Route {...rest} render={(props) => (
+   <SideMenuLayout links={ sideLinks }>
       <Component {...props} />
    </SideMenuLayout>
 )} />;
 
 SideMenuLayoutRoute.propTypes = {
-   component: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired
+   component: PropTypes.oneOfType([PropTypes.node, PropTypes.element]).isRequired,
+   links: PropTypes.arrayOf(
+      PropTypes.shape({
+         text: PropTypes.string,
+         link: PropTypes.string,
+         id: PropTypes.string
+      })
+   )
 };
 
 export default SideMenuLayoutRoute;

@@ -26,7 +26,7 @@ import MenuIcon from '@material-ui/icons/Menu';
  * 
  * It contains a navigation bar on the left side, and the view on the rest of the screen.
  */
-function SideMenuLayout({ intl, children }) {
+function SideMenuLayout({ intl, children, links }) {
 
    const [open, setOpen] = React.useState(false);
 
@@ -38,18 +38,22 @@ function SideMenuLayout({ intl, children }) {
       setOpen(false);
    }
 
+   const linkItems = links.map((link) => <ListItem button key={link.id} >
+      <Link to={link.link}><ListItemText primary={ intl.formatMessage(link.text) } /></Link>
+   </ListItem>);
+
    return <React.Fragment>
-      <AppBar position="relative">
+      <AppBar position='relative'>
          <Toolbar>
-            <IconButton color="inherit" aria-label="Open drawer" onClick={handleDrawerOpen} edge="start">
+            <IconButton color='inherit' aria-label='Open drawer' onClick={handleDrawerOpen} edge='start'>
                <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" noWrap>
+            <Typography variant='h6' color='inherit' noWrap>
                { intl.formatMessage({ id: 'app.title' }) }
             </Typography>
          </Toolbar>
       </AppBar>
-      <Drawer variant="persistent" anchor="left" open={open}>
+      <Drawer variant='persistent' anchor='left' open={open}>
          <div>
             <IconButton onClick={handleDrawerClose}>
                <ChevronLeftIcon />
@@ -57,12 +61,7 @@ function SideMenuLayout({ intl, children }) {
          </div>
          <Divider />
          <List>
-            <ListItem button key={'index'}>
-               <Link to="/"><ListItemText primary={ intl.formatMessage({ id: 'link.index' }) } /></Link>
-            </ListItem>
-            <ListItem button key={'search'}>
-               <Link to="/search"><ListItemText primary={ intl.formatMessage({ id: 'link.search' }) } /></Link>
-            </ListItem>
+            { linkItems }
          </List>
       </Drawer>
       <main>
@@ -81,6 +80,13 @@ SideMenuLayout.propTypes = {
       PropTypes.array,
       PropTypes.object
    ]),
+   links: PropTypes.arrayOf(
+      PropTypes.shape({
+         text: PropTypes.string,
+         link: PropTypes.string,
+         id: PropTypes.string
+      })
+   ),
    intl: intlShape.isRequired
 };
 
