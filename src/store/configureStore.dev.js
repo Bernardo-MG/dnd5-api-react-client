@@ -3,7 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import sagaMonitor from '@redux-saga/simple-saga-monitor';
 import { createLogger } from 'redux-logger';
 import rootReducer from 'reducers';
-import DevTools from 'development/components/DevTools';
+import DevTools from 'development';
 import rootSaga from 'sagas';
 
 const sagaMiddleware = createSagaMiddleware(sagaMonitor);
