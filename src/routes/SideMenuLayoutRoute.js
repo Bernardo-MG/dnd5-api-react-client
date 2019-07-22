@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 import { Route } from 'react-router-dom';
 
-import { SideMenuLayout } from 'views';
+import { DefaultSideMenuLayout } from 'layout';
 
 const SideMenuLayoutRoute = ({ component: Component, ...rest }) => <Route {...rest} render={(props) => (
-   <SideMenuLayout>
+   <DefaultSideMenuLayout>
       <Component {...props} />
-   </SideMenuLayout>
+   </DefaultSideMenuLayout>
 )} />;
 
 SideMenuLayoutRoute.propTypes = {
