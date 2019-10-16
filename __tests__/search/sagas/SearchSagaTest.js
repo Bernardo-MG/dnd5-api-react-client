@@ -28,12 +28,12 @@ describe('Search requests saga', () => {
       )
    }),
 
-   it('returns nothing if payload is missing', () => {
+   it('tries to search when the payload is undefined', () => {
       const gen = generatorEmpty.clone();
       expect(
          gen.next().value
          ).toEqual(
-         undefined
+            call(api.Books.byTitle, undefined)
       )
    })
 });

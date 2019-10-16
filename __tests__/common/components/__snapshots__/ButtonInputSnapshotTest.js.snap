@@ -25,6 +25,7 @@ exports[`<ButtonInput /> renders correctly 1`] = `
         className="MuiInputBase-input MuiInput-input"
         disabled={false}
         id="testButtonInput"
+        onAnimationStart={[Function]}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
