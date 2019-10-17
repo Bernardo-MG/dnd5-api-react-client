@@ -9,7 +9,7 @@ import { search } from 'search/actions/books';
 function BookSearchForm(props) {
 
    const dispatch = useDispatch();
-   const action = () => dispatch(search());
+   const action = (input) => dispatch(search(input));
 
    return <ButtonInput {...props} action={action} />;
 }
