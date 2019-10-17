@@ -1,28 +1,19 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { useDispatch } from 'react-redux';
 
 import ButtonInput from 'common/components/ButtonInput';
 
 import { search } from 'search/actions/books';
 
-function BookSearchForm(props) { return <ButtonInput {...props} />; }
+function BookSearchForm(props) {
+
+   const dispatch = useDispatch();
+   const action = () => dispatch(search());
+
+   return <ButtonInput {...props} action={action} />;
+}
 
 BookSearchForm.propTypes = {};
 
-const mapStateToProps = () => {
-   return {};
-};
-
-
-const mapDispatchToProps = (dispatch) => {
-   return {
-      action: bindActionCreators(search, dispatch)
-   };
-};
-
-export default connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(BookSearchForm);
+export default BookSearchForm;
