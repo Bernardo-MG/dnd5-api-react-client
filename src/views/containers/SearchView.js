@@ -2,9 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { injectIntl } from 'react-intl';
-
-import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 
 import { selectSearchingBooks } from 'search/selectors';
 
@@ -15,8 +13,10 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-function SearchView({ intl }) {
+function SearchView() {
    let view = null;
+
+   const intl = useIntl();
 
    const loading = useSelector(selectSearchingBooks);
 
@@ -43,8 +43,6 @@ function SearchView({ intl }) {
 
 }
 
-SearchView.propTypes = {
-   intl: PropTypes.object.isRequired
-};
+SearchView.propTypes = {};
 
-export default injectIntl(SearchView);
+export default SearchView;
