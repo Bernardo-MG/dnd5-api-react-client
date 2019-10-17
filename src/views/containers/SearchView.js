@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { injectIntl, intlShape } from 'react-intl';
 
@@ -15,8 +13,10 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-function SearchView({ intl, loading }) {
+function SearchView({ intl }) {
    let view = null;
+
+   const loading = useSelector(selectSearchingBooks);
 
    if (loading) {
       view = <Grid container justify='center' alignItems='center' style={ { height: '70vh', overflow: 'auto' } }> <CircularProgress /> </Grid>;
@@ -42,21 +42,7 @@ function SearchView({ intl, loading }) {
 }
 
 SearchView.propTypes = {
-   loading: PropTypes.bool.isRequired,
    intl: intlShape.isRequired
 };
 
-const mapStateToProps = (state) => {
-   return {
-      loading: selectSearchingBooks(state)
-   };
-};
-
-const mapDispatchToProps = () => {
-   return {};
-};
-
-export default injectIntl(connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(SearchView));
+export default injectIntl(SearchView);
