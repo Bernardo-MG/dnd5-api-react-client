@@ -2,7 +2,9 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
+
+import PropTypes from 'prop-types';
 
 import { selectSearchingBooks } from 'search/selectors';
 
@@ -42,7 +44,7 @@ function SearchView({ intl }) {
 }
 
 SearchView.propTypes = {
-   intl: intlShape.isRequired
+   intl: PropTypes.object.isRequired
 };
 
 export default injectIntl(SearchView);
