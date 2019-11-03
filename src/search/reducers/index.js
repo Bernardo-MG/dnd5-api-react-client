@@ -1,6 +1,11 @@
 import * as types from 'search/actions/types';
 
-const search = (state = { bookIds: [], searchingBooks: false }, action) => {
+const defaultState = {
+   bookIds: [],
+   searchingBooks: false 
+};
+
+const search = (state = defaultState, action) => {
    switch (action.type) {
    case types.SEARCH_BOOK:
       return {

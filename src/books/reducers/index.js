@@ -1,6 +1,10 @@
 import * as types from 'books/actions/types';
 
-const book = (state = { books: {} }, action) => {
+const defaultState = {
+   books: {}
+};
+
+const book = (state = defaultState, action) => {
    switch (action.type) {
    case types.ADD_BOOKS:
       return {
