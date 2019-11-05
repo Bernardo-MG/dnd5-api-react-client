@@ -2,7 +2,7 @@ import * as types from 'search/actions/types';
 
 const defaultState = {
    bookIds: [],
-   searchingBooks: false 
+   searchingBooks: false
 };
 
 const search = (state = defaultState, action) => {
