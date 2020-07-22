@@ -1,0 +1,23 @@
+name: Testing and validation
+
+on: [push, pull_request]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 8.x, 10.x, 12.x ]
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install dependencies
+      run: npm ci
+    - name: Run tests
+      run: npm test
