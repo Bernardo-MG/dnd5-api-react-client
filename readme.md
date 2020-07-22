@@ -25,7 +25,7 @@ And a [development demo site][demo-site-development], taken from the development
 First of all install the dependencies:
 
 ```
-$ npm install
+npm install
 ```
 
 Then there are two options for building the project.
@@ -33,13 +33,13 @@ Then there are two options for building the project.
 You can create a development version:
 
 ```
-$ npm run development
+npm run development
 ```
 
 Or a production version:
 
 ```
-$ npm run build
+npm run build
 ```
 
 ### Running tests
@@ -55,7 +55,7 @@ npm run test
 Once the project has been built it can be deployed locally for testing:
 
 ```
-$ npm run start
+npm run start
 ```
 
 ## Collaborate
