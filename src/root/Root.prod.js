@@ -8,15 +8,23 @@ import { HashRouter as Router } from 'react-router-dom';
 
 import { IntlProvider } from 'react-intl';
 
+import { SnackbarProvider } from 'notistack';
+
+import Notificator from 'notify/containers/Notificator';
+
 /**
  * Production root application.
  */
 const Root = ({ store, language, i18nMessages }) => (
    <IntlProvider locale={language} defaultLocale='en' messages={i18nMessages}>
       <Provider store={store}>
-         <Router>
-            {routes}
-         </Router>
+         <SnackbarProvider>
+            <Notificator>
+               <Router>
+                  {routes}
+               </Router>
+            </Notificator>
+         </SnackbarProvider>
       </Provider>
    </IntlProvider>
 );

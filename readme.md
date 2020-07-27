@@ -1,6 +1,6 @@
-# React REST Client Example
+# DnD5 API React Client
 
-An example REST client made with React and Redux, which queries the [Open Library][open-library].
+An example REST client made with React and Redux. Using the [DnD5e API][dnd5api].
 
 ## Features
 
@@ -25,7 +25,7 @@ And a [development demo site][demo-site-development], taken from the development
 First of all install the dependencies:
 
 ```
-$ npm install
+npm install
 ```
 
 Then there are two options for building the project.
@@ -33,13 +33,13 @@ Then there are two options for building the project.
 You can create a development version:
 
 ```
-$ npm run development
+npm run development
 ```
 
 Or a production version:
 
 ```
-$ npm run build
+npm run build
 ```
 
 ### Running tests
@@ -55,7 +55,7 @@ npm run test
 Once the project has been built it can be deployed locally for testing:
 
 ```
-$ npm run start
+npm run start
 ```
 
 ## Collaborate
@@ -77,12 +77,12 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[issues]: https://github.com/Bernardo-MG/react-rest-client-example/issues
+[issues]: https://github.com/Bernardo-MG/dnd5-api-react-client/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [npm]: https://www.npmjs.com/
-[scm]: https://github.com/Bernardo-MG/react-rest-client-example
+[scm]: https://github.com/Bernardo-MG/dnd5-api-react-client
 
-[open-library]: https://openlibrary.org
+[dnd5api]: http://www.dnd5eapi.co/
 
-[demo-site]: https://docs.bernardomg.com/react-rest-client-example
-[demo-site-development]: https://docs.bernardomg.com/development/react-rest-client-example
+[demo-site]: https://docs.bernardomg.com/dnd5-api-react-client
+[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-react-client

@@ -11,28 +11,30 @@ const PROJECT_VERSION = process.env.APP_VERSION || '';
 // Project URL
 const PROJECT_REPO_URL = process.env.REPO_URL;
 
+// API root
+const PROJECT_API_ROOT = 'https://www.dnd5eapi.co/api';
+
 // Input directory
-const INPUT_PATH = process.env.INPUT_PATH;
+const INPUT_PATH = './src/';
 const INPUT_PATH_ENTRY = INPUT_PATH + 'index.js';
 
 // Output directory
-const OUTPUT_PATH = process.env.OUTPUT_PATH || './build/';
+const OUTPUT_PATH = './build/';
 
 // Modules dependencies directory
-const MODULE_PATH = process.env.MODULE_PATH;
+const MODULE_PATH = './node_modules/';
 
 // Plugins
 let plugins = [
    new webpack.optimize.OccurrenceOrderPlugin(),
    new webpack.DefinePlugin({
+      API_ROOT : JSON.stringify(PROJECT_API_ROOT),
       APP_VERSION : JSON.stringify(PROJECT_VERSION),
       REPO_URL : JSON.stringify(PROJECT_REPO_URL)
    }),
-   new CopyWebpackPlugin([
-      {
-         from: 'index'
-      }
-  ])
+   new CopyWebpackPlugin({
+         patterns: [ {from: path.resolve(__dirname, './index')} ]
+   })
 ]
 
 module.exports = {

@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom';
 
 import SideMenuLayoutRoute from 'routes/SideMenuLayoutRoute';
 
-import { Index, SearchView } from 'views';
+import { Index, CharClassView, CharClassListView } from 'views';
 
 /**
  * All the routes for the application.
@@ -14,5 +14,6 @@ import { Index, SearchView } from 'views';
  */
 export default <Switch>
    <SideMenuLayoutRoute path='/' exact component={Index}/>
-   <SideMenuLayoutRoute path='/search' exact component={SearchView}/>
+   <SideMenuLayoutRoute path='/classes' exact component={CharClassListView}/>
+   <SideMenuLayoutRoute path='/classes/:id' exact component={CharClassView}/>
 </Switch>;
