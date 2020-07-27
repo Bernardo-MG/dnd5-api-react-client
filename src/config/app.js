@@ -1,3 +1,3 @@
-const title = 'React REST Client Example';
+const title = 'DnD5 API React Client';
 
 export { title };
