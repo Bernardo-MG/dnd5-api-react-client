@@ -1,4 +1,3 @@
-
 const sideLinks = [
    {
       text: 'Index',
@@ -6,8 +5,8 @@ const sideLinks = [
       id: 'index'
    },
    {
-      text: 'Search',
-      link: '/search',
+      text: 'Classes',
+      link: '/classes',
       id: 'search'
    }
 ];

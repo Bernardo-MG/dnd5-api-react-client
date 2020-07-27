@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import book from 'books/reducers';
-import search from 'search/reducers';
+import domain from 'domain/reducers';
+import notification from 'notify/reducers';
 
-const rootReducer = combineReducers({ book, search });
+const rootReducer = combineReducers({ domain, notification });
 
 export default rootReducer;

@@ -1,4 +1,5 @@
 import Index from 'views/components/Index';
-import SearchView from 'views/containers/SearchView';
+import CharClassListView from 'views/containers/CharClassListView';
+import CharClassView from 'views/containers/CharClassView';
 
-export { SearchView, Index };
+export { CharClassView, CharClassListView, Index };
