@@ -77,12 +77,12 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[issues]: https://github.com/Bernardo-MG/dnd5-api-rest-client/issues
+[issues]: https://github.com/Bernardo-MG/dnd5-api-react-client/issues
 [license]: http://www.opensource.org/licenses/mit-license.php
 [npm]: https://www.npmjs.com/
-[scm]: https://github.com/Bernardo-MG/dnd5-api-rest-client
+[scm]: https://github.com/Bernardo-MG/dnd5-api-react-client
 
 [dnd5api]: http://www.dnd5eapi.co/
 
-[demo-site]: https://docs.bernardomg.com/dnd5-api-rest-client
-[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-rest-client
+[demo-site]: https://docs.bernardomg.com/dnd5-api-react-client
+[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-react-client
