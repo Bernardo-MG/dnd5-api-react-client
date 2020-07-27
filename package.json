@@ -1,9 +1,9 @@
 {
-   "name": "react-rest-client-example",
+   "name": "dnd5-api-react-client",
    "version": "0.1.0",
    "description": "An example for a REST client using JS and React + Redux",
    "author": "Bernardo Mart�nez Garrido",
-   "homepage": "https://github.com/Bernardo-MG/react-rest-client-example",
+   "homepage": "https://github.com/Bernardo-MG/dnd5-api-react-client",
    "license": "MIT",
    "keywords": [
       "REST",
@@ -12,10 +12,10 @@
    ],
    "repository": {
       "type": "git",
-      "url": "git@github.com:bernardo-mg/react-rest-client-example.git"
+      "url": "git@github.com:bernardo-mg/dnd5-api-react-client.git"
    },
    "bugs": {
-      "url": "https://github.com/Bernardo-MG/react-rest-client-example/issues"
+      "url": "https://github.com/Bernardo-MG/dnd5-api-react-client/issues"
    },
    "scripts": {
       "development": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
