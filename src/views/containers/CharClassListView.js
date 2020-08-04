@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { useCharClassList } from 'domain/hooks';
 
 function CharClassesList({ values }) {
-   return <List>
+   return <List className="selectionList">
       {values.map((value) =>
          <ListItem key={value.index}>
             <Link to={`/classes/${value.index}`}>{ value.name }</Link>

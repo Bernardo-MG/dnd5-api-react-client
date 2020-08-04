@@ -6,6 +6,8 @@ import '@babel/register';
 import Root from 'root';
 import configureStore from 'store/configureStore';
 
+import 'style/app.css';
+
 import localeData from 'i18n/messages.json';
 
 // Data store
