@@ -14,6 +14,8 @@ import { DevMonitor } from 'development';
 
 import Notificator from 'notify/containers/Notificator';
 
+import { DefaultSideMenuLayout } from 'layout';
+
 /**
  * Development root application.
  * 
@@ -26,7 +28,9 @@ const Root = ({ store, language, i18nMessages }) => (
             <Notificator>
                <Fragment>
                   <Router>
-                     {routes}
+                     <DefaultSideMenuLayout>
+                        {routes}
+                     </DefaultSideMenuLayout>
                   </Router>
                   <DevMonitor />
                </Fragment>
