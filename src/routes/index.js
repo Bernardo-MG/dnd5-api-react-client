@@ -1,7 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
-
-import SideMenuLayoutRoute from 'routes/SideMenuLayoutRoute';
+import { Route, Switch } from 'react-router-dom';
 
 import { Index, CharClassView, CharClassListView } from 'views';
 
@@ -13,7 +11,19 @@ import { Index, CharClassView, CharClassListView } from 'views';
  * - Component to show
  */
 export default <Switch>
-   <SideMenuLayoutRoute path='/' exact component={Index}/>
-   <SideMenuLayoutRoute path='/classes' exact component={CharClassListView}/>
-   <SideMenuLayoutRoute path='/classes/:id' exact component={CharClassView}/>
+   <Route path='/' exact component={Index} />
+   <Route path='/classes' exact component={CharClassListView} />
+   <Route path='/classes/:id' exact render={(props) => {
+      const {
+         match: {
+            params: { id }
+         }
+      } = props;
+      return (
+         <CharClassView
+            key={id}
+            {...props}
+         />
+      );
+   }} />
 </Switch>;
