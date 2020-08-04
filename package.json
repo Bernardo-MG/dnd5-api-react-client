@@ -1,7 +1,7 @@
 {
    "name": "dnd5-api-react-client",
-   "version": "0.1.0",
-   "description": "An example for a REST client using JS and React + Redux",
+   "version": "1.0.0",
+   "description": "An example for a REST client using React + Redux",
    "author": "Bernardo Mart�nez Garrido",
    "homepage": "https://github.com/Bernardo-MG/dnd5-api-react-client",
    "license": "MIT",
