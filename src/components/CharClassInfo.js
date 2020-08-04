@@ -18,24 +18,24 @@ function CharClassInfo({ charclass }) {
          {'saving_throws'}
       </Typography>
       <List>
-         {charclass.saving_throws.map((value) =>
-            <ListItem key={value.index}>{value.name}</ListItem>
+         {charclass.saving_throws.map((value, index) =>
+            <ListItem key={index}>{value.name}</ListItem>
          )}
       </List>
       <Typography variant="subtitle1" noWrap>
          {'proficiencies'}
       </Typography>
       <List>
-         {charclass.proficiencies.map((value) =>
-            <ListItem key={value.index}>{value.name}</ListItem>
+         {charclass.proficiencies.map((value, index) =>
+            <ListItem key={index}>{value.name}</ListItem>
          )}
       </List>
       <Typography variant="subtitle1" noWrap>
          {'sub_classes'}
       </Typography>
       <List>
-         {charclass.subclasses.map((value) =>
-            <ListItem key={value.index}>{value.name}</ListItem>
+         {charclass.subclasses.map((value, index) =>
+            <ListItem key={index}>{value.name}</ListItem>
          )}
       </List>
    </Fragment>;
