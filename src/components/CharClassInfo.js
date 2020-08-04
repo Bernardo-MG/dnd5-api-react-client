@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 
 import PropTypes from 'prop-types';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 
 function CharClassInfo({ charclass }) {
@@ -15,29 +13,17 @@ function CharClassInfo({ charclass }) {
          {`hit_die: ${charclass.hit_die}`}
       </Typography>
       <Typography variant="subtitle1" noWrap>
-         {'saving_throws'}
+         {'sub_classes'} {' '} {charclass.subclasses.map((value) => value.name).join(', ')}
       </Typography>
-      <List>
-         {charclass.saving_throws.map((value, index) =>
-            <ListItem key={index}>{value.name}</ListItem>
-         )}
-      </List>
-      <Typography variant="subtitle1" noWrap>
+      <Typography variant="h2" noWrap>
          {'proficiencies'}
       </Typography>
-      <List>
-         {charclass.proficiencies.map((value, index) =>
-            <ListItem key={index}>{value.name}</ListItem>
-         )}
-      </List>
       <Typography variant="subtitle1" noWrap>
-         {'sub_classes'}
+         {'saving_throws'} {' '} {charclass.saving_throws.map((value) => value.name).join(', ')}
       </Typography>
-      <List>
-         {charclass.subclasses.map((value, index) =>
-            <ListItem key={index}>{value.name}</ListItem>
-         )}
-      </List>
+      <Typography variant="subtitle1" noWrap>
+         {'proficiencies'} {' '} {charclass.proficiencies.map((value) => value.name).join(', ')}
+      </Typography>
    </Fragment>;
 }
 
