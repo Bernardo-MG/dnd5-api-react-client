@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
@@ -14,7 +14,7 @@ function CharClassesList({ values }) {
    return <List className="selectionList">
       {values.map((value) =>
          <ListItem key={value.index}>
-            <Link to={`/classes/${value.index}`}>{ value.name }</Link>
+            <Link to={`/classes/${value.index}`}>{value.name}</Link>
          </ListItem>
       )}
    </List>;
@@ -27,12 +27,12 @@ CharClassesList.propTypes = {
 function CharClassListView() {
    const charclasslist = useCharClassList();
 
-   return <Fragment>
-      <Typography variant="h2" color="inherit" noWrap>
-         { 'Classes' }
-      </Typography>
-      <CharClassesList values={charclasslist} />
-   </Fragment>;
+   return <Grid container spacing={3}>
+      <Grid item xs={9}></Grid>
+      <Grid item xs={3}>
+         <CharClassesList values={charclasslist} />
+      </Grid>
+   </Grid>;
 }
 
 CharClassListView.propTypes = {};
