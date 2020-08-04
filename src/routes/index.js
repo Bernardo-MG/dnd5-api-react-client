@@ -11,7 +11,19 @@ import { Index, CharClassView, CharClassListView } from 'views';
  * - Component to show
  */
 export default <Switch>
-   <Route path='/' exact component={Index}/>
-   <Route path='/classes' exact component={CharClassListView}/>
-   <Route path='/classes/:id' exact component={CharClassView}/>
+   <Route path='/' exact component={Index} />
+   <Route path='/classes' exact component={CharClassListView} />
+   <Route path='/classes/:id' exact render={(props) => {
+      const {
+         match: {
+            params: { id }
+         }
+      } = props;
+      return (
+         <CharClassView
+            key={id}
+            {...props}
+         />
+      );
+   }} />
 </Switch>;
