@@ -13,16 +13,16 @@ function CharClassInfo({ charclass }) {
          {`hit_die: ${charclass.hit_die}`}
       </Typography>
       <Typography variant="subtitle1" noWrap>
-         {'sub_classes'} {' '} {charclass.subclasses.map((value) => value.name).join(', ')}
+         {`sub_classes: ${charclass.subclasses.map((value) => value.name).join(', ')}`}
       </Typography>
       <Typography variant="h2" noWrap>
          {'proficiencies'}
       </Typography>
       <Typography variant="subtitle1" noWrap>
-         {'saving_throws'} {' '} {charclass.saving_throws.map((value) => value.name).join(', ')}
+         {`saving_throws: ${charclass.saving_throws.map((value) => value.name).join(', ')}`}
       </Typography>
       <Typography variant="subtitle1" noWrap>
-         {'proficiencies'} {' '} {charclass.proficiencies.map((value) => value.name).join(', ')}
+         {`proficiencies: ${charclass.proficiencies.map((value) => value.name).join(', ')}`}
       </Typography>
    </Fragment>;
 }
