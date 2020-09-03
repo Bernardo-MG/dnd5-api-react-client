@@ -1,6 +1,6 @@
 {
    "name": "dnd5-api-react-client",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "An example for a REST client using React + Redux",
    "author": "Bernardo Mart�nez Garrido",
    "homepage": "https://github.com/Bernardo-MG/dnd5-api-react-client",
