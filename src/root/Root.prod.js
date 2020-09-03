@@ -12,6 +12,8 @@ import { SnackbarProvider } from 'notistack';
 
 import Notificator from 'notify/containers/Notificator';
 
+import { DefaultSideMenuLayout } from 'layout';
+
 /**
  * Production root application.
  */
@@ -21,7 +23,9 @@ const Root = ({ store, language, i18nMessages }) => (
          <SnackbarProvider>
             <Notificator>
                <Router>
-                  {routes}
+                  <DefaultSideMenuLayout>
+                     {routes}
+                  </DefaultSideMenuLayout>
                </Router>
             </Notificator>
          </SnackbarProvider>
