@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DnD5 API React Client
 
-## Getting Started
+An example REST client made with React and Redux. Using the [DnD5e API][dnd5api].
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Check it
+
+There is an [online demo site][demo-site] which always reflects the latest version, taken from the master branch.
+
+And a [development demo site][demo-site-development], taken from the development branch.
+
+## Usage
+
+### Building the project
+
+First of all install the dependencies:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then run a development version:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The project will be available at [http://localhost:3000](http://localhost:3000).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Running tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+There is a script ready for running tests:
 
-## Learn More
+```
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Collaborate
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Any kind of help with the project will be well received, and there are two main ways to give such help:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Reporting errors and asking for extensions through the issues management
+- or forking the repository and extending the project
 
-## Deploy on Vercel
+### Issues management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Issues are managed at the GitHub [project issues tracker][issues], where any Github user may report bugs or ask for new features.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Getting the code
+
+If you wish to fork or modify the code, visit the [GitHub project page][scm], where the latest versions are always kept. Check the 'master' branch for the latest release, and the 'develop' for the current, and stable, development version.
+
+## License
+
+The project has been released under the [MIT License][license].
+
+[issues]: https://github.com/Bernardo-MG/dnd5-api-react-client/issues
+[license]: http://www.opensource.org/licenses/mit-license.php
+[npm]: https://www.npmjs.com/
+[scm]: https://github.com/Bernardo-MG/dnd5-api-react-client
+
+[dnd5api]: http://www.dnd5eapi.co/
+
+[demo-site]: https://docs.bernardomg.com/dnd5-api-react-client
+[demo-site-development]: https://docs.bernardomg.com/development/dnd5-api-react-client
